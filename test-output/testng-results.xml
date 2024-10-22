@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-22T18:57:22Z" name="Suite" finished-at="2024-10-22T18:57:54Z" duration-ms="32579">
+    <groups>
+    </groups>
+    <test started-at="2024-10-22T18:57:22Z" name="Test" finished-at="2024-10-22T18:57:54Z" duration-ms="32579">
+      <class name="com.WNS_Project.testCases.TC_02_Status_Check">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@865dd6]" started-at="2024-10-23T00:27:22Z" name="setup" finished-at="2024-10-23T00:27:29Z" duration-ms="7547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@865dd6]" started-at="2024-10-23T00:27:29Z" name="Status" finished-at="2024-10-23T00:27:54Z" duration-ms="24599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@865dd6]" started-at="2024-10-23T00:27:54Z" name="teardown" finished-at="2024-10-23T00:27:54Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_02_Status_Check -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
