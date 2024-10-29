@@ -20,9 +20,6 @@ public class Deploy_WNSNode extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "/html/body/div[2]/div/header/div[2]/div[1]/label/div")
-	WebElement togglebutton;
-
 	@FindBy(xpath = "//../../div/div[2]/div[1]/div[2]/img[@alt=\"AWS Logo\"]/../../../../button")
 	WebElement deploy_button;
 
@@ -52,11 +49,6 @@ public class Deploy_WNSNode extends BaseClass {
 
 	@FindBy(xpath = "//div[@id=\"modal-:r8:\"]/div[2]/button[contains(text(),\"Cancel\")]")
 	WebElement popup_cancel;
-
-	public void Toggle_Button() {
-		wait.until(ExpectedConditions.elementToBeClickable(togglebutton));
-		togglebutton.click();
-	}
 
 	public void Deploy_button() {
 		wait.until(ExpectedConditions.elementToBeClickable(deploy_button));

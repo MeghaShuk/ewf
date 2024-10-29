@@ -2,26 +2,37 @@ package com.WNS_Project.testCases;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
-import com.WNS_Project.pageObject.Import_Key;
+import com.WNS_Project.pageObject.Status_Check;
 
 public class TC_05_Import_Key extends BaseClass {
 
-	@Test(priority = 1)
+	@Test
 	public void Status() throws IOException, InterruptedException, AWTException {
 
-		TC_02_Status_Check test2 = new TC_02_Status_Check();
-		test2.Status();
+		Status_Check status = new Status_Check(driver);
+
+		WorkerManageScreen();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).perform();
+		status.View_Button();
+		Thread.sleep(2000);
+		status.Import_Button();
+		status.Key_Input(importedkey);
+		status.Save_Button();
 	}
 
-	@Test(priority = 2)
-	public void ImportKey() throws IOException, InterruptedException, AWTException {
-
-		Import_Key importkey = new Import_Key(driver);
-		importkey.Import_Button();
-		importkey.Key_Input(importedkey);
-		importkey.Save_Button();
-		Thread.sleep(20000);
+	@AfterClass
+	public void delayAfterTests() {
+		try {
+			System.out.print("Adding 20-sec delay before running the next test class...");
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

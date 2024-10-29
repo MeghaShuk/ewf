@@ -2,23 +2,25 @@ package com.WNS_Project.testCases;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
-import com.WNS_Project.pageObject.Download_Summary;
+import com.WNS_Project.pageObject.Status_Check;
 
 public class TC_03_Download_Summary extends BaseClass {
 
-	@Test(priority = 1)
+	@Test
 	public void Status() throws IOException, InterruptedException, AWTException {
 
-		TC_02_Status_Check test2 = new TC_02_Status_Check();
-		test2.Status();
-	}
+		Status_Check status = new Status_Check(driver);
 
-	@Test(priority = 2)
-	public void Download() throws IOException, InterruptedException, AWTException {
-
-		Download_Summary download = new Download_Summary(driver);
-		download.Download_Button();
+		WorkerManageScreen();
+		Thread.sleep(2000);
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).perform();
+		status.View_Button();
+		Thread.sleep(2000);
+		status.Download_Button();
 	}
 }

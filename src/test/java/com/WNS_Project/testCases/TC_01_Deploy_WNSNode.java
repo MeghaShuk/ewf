@@ -16,15 +16,8 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 
 		Deploy_WNSNode deploy = new Deploy_WNSNode(driver);
 
-		Thread.sleep(15000);
-		driver.navigate().refresh();
-		Username(email);
-		Password(password);
+		WorkerManageScreen();
 		Thread.sleep(3000);
-		Submit();
-		Thread.sleep(3000);
-		deploy.Toggle_Button();
-		driver.navigate().to(workermanage);
 		deploy.Deploy_button();
 		deploy.Node_Name(nodename);
 		deploy.ChooseRegion();

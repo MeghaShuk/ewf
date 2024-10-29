@@ -7,13 +7,14 @@
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="com.WNS_Project.testCases.TC_06_Logs">
+      <class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode">
         <methods>
-          <include name="logs"/>
+          <include name="DeployNode"/>
           <include name="teardown"/>
           <include name="setup"/>
+          <include name="delayAfterTests"/>
         </methods>
-      </class> <!-- com.WNS_Project.testCases.TC_06_Logs -->
+      </class> <!-- com.WNS_Project.testCases.TC_01_Deploy_WNSNode -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
