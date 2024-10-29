@@ -26,5 +26,6 @@ public class TC_06_Logs extends BaseClass {
 		Thread.sleep(5000);
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(15000);
 	}
 }

@@ -21,6 +21,6 @@ public class TC_04_Generate_NewKey extends BaseClass {
 		Generate_NewKey generate = new Generate_NewKey(driver);
 		generate.Create_Button();
 		generate.Confirm_Button();
-		//Thread.sleep(15000);
+		Thread.sleep(15000);
 	}
 }

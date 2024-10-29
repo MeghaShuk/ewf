@@ -44,8 +44,8 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 	@AfterClass
 	public void delayAfterTests() {
 		try {
-			System.out.println("Adding a 20-minute delay before running the next test class...");
-			Thread.sleep(650000); // 20-minute delay (1,200,000 milliseconds)
+			System.out.println("Adding a 10-minute delay before running the next test class...");
+			Thread.sleep(650000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
