@@ -19,6 +19,7 @@ public class BaseClass {
 	public String email = readconfig.getEmail();
 	public String password = readconfig.getPassword();
 	public String nodename = readconfig.getNodeName();
+	public String importedkey = readconfig.getMnemonicKey();
 
 	public static WebDriver driver;
 

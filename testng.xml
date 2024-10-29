@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	
+	<listeners>
+		<listener class-name="com.WNS_Project.Utilities.Reports" />
+		<listener class-name="com.WNS_Project.Utilities.SuiteListeners" />
+	</listeners>
 	<test name="Test">
 		<classes>
+			<class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode" />
 			<class name="com.WNS_Project.testCases.TC_02_Status_Check" />
+			<class name="com.WNS_Project.testCases.TC_03_Download_Summary" />
+			<class name="com.WNS_Project.testCases.TC_04_Generate_NewKey" />
+			<class name="com.WNS_Project.testCases.TC_05_Import_Key" />
+			<class name="com.WNS_Project.testCases.TC_06_Logs" />
+
 		</classes>
 	</test> <!--
 	Test -->

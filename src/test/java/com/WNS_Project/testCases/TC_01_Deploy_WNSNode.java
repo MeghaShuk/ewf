@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
 import com.WNS_Project.pageObject.Deploy_WNSNode;
@@ -15,7 +16,7 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 
 		Deploy_WNSNode deploy = new Deploy_WNSNode(driver);
 
-		Thread.sleep(7000);
+		Thread.sleep(15000);
 		driver.navigate().refresh();
 		Username(email);
 		Password(password);
@@ -38,5 +39,15 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		deploy.Generate_Key();
 		deploy.Continue_button();
 		deploy.Popup_Continue();
+	}
+
+	@AfterClass
+	public void delayAfterTests() {
+		try {
+			System.out.println("Adding a 20-minute delay before running the next test class...");
+			Thread.sleep(650000); // 20-minute delay (1,200,000 milliseconds)
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

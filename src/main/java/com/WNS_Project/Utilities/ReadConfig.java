@@ -43,8 +43,14 @@ public class ReadConfig {
 		return Password;
 	}
 
+	// Node Name
 	public String getNodeName() {
 		String name = pro.getProperty("NodeName");
 		return name;
+	}
+
+	public String getMnemonicKey() {
+		String key = pro.getProperty("Mnemonic");
+		return key;
 	}
 }
