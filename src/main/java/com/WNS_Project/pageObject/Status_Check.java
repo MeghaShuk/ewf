@@ -46,6 +46,24 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button[contains(text(),\"Logs\")]")
 	WebElement logs_tab;
 
+	@FindBy(xpath = "//button[contains(text(), \"Solution Whitelist\")]")
+	WebElement sw;
+
+	@FindBy(xpath = "//*[@id=\"input-:rl:\"]")
+	WebElement solution_name;
+
+	@FindBy(xpath = "//div[@id=\"accordion-0-content\"]/div[1]/div[1]/div/div")
+	WebElement remove_solution;
+
+	@FindBy(xpath = "//div[@class=\"mt-auto flex justify-end\"]/button[contains(text(),\"Save\")]")
+	WebElement save_sol;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div/div[1]/div/button")
+	WebElement delete;
+
+	@FindBy(xpath = "//button[contains(text(), \"Confirm\")]")
+	WebElement confirm_del;
+
 	public void Toggle_Button() {
 		wait.until(ExpectedConditions.elementToBeClickable(togglebutton));
 		togglebutton.click();
@@ -94,5 +112,34 @@ public class Status_Check extends BaseClass {
 	public void LogTab() {
 		wait.until(ExpectedConditions.elementToBeClickable(logs_tab));
 		logs_tab.click();
+	}
+
+	public void SW() {
+		wait.until(ExpectedConditions.elementToBeClickable(sw));
+		sw.click();
+	}
+
+	public void SolutionName(String name) {
+		solution_name.sendKeys(name);
+	}
+
+	public void Sol_Save_Button() {
+		wait.until(ExpectedConditions.elementToBeClickable(save_sol));
+		save_sol.click();
+	}
+
+	public void Remove_Sol() {
+		wait.until(ExpectedConditions.elementToBeClickable(remove_solution));
+		remove_solution.click();
+	}
+
+	public void Delete() {
+		wait.until(ExpectedConditions.elementToBeClickable(delete));
+		delete.click();
+	}
+
+	public void Confirm_Del() {
+		wait.until(ExpectedConditions.elementToBeClickable(confirm_del));
+		confirm_del.click();
 	}
 }

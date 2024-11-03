@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.WNS_Project.testCases.TC_02_Status_Check">
+      <class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist">
         <methods>
-          <include name="Status"/>
+          <include name="Solutionwhitelist"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.WNS_Project.testCases.TC_02_Status_Check -->
+      </class> <!-- com.WNS_Project.testCases.TC_07_Solutionwhitelist -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

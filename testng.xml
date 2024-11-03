@@ -3,7 +3,6 @@
 
 <suite name="Suite">
 
-
 	<test name="Test">
 		<classes>
 
@@ -13,6 +12,8 @@
 			<class name="com.WNS_Project.testCases.TC_04_Generate_NewKey" />
 			<class name="com.WNS_Project.testCases.TC_05_Import_Key" />
 			<class name="com.WNS_Project.testCases.TC_06_Logs" />
+			<class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist" />
+			<class name="com.WNS_Project.testCases.TC_08_DeleteWNS" />
 
 
 		</classes>

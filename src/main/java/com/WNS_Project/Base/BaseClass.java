@@ -1,7 +1,11 @@
 package com.WNS_Project.Base;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,11 +26,12 @@ public class BaseClass {
 	public String password = readconfig.getPassword();
 	public String nodename = readconfig.getNodeName();
 	public String importedkey = readconfig.getMnemonicKey();
+	public String solution_whitelist = readconfig.getsolutionwhitelist();
 
 	public static WebDriver driver;
 
 	@BeforeClass
-	public void setup() {
+	public void setup() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		baseurl = readconfig.getApplicationURL();
@@ -34,6 +39,24 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		driver.navigate().refresh();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		Thread.sleep(10000);
+		driver.navigate().refresh();
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		Thread.sleep(5000);
+		String mainWindow = driver.getWindowHandle();
+
+		Set<String> handles = driver.getWindowHandles();
+		List<String> handleList = new ArrayList<>(handles);
+
+		// Switch to new window
+		for (String handle : handleList) {
+			if (!handle.equals(mainWindow)) {
+				driver.switchTo().window(handle);
+				driver.get(baseurl);
+				driver.manage().window().maximize();
+				break;
+			}
+		}
 	}
 
 	@AfterClass
@@ -67,8 +90,7 @@ public class BaseClass {
 	}
 
 	public void WorkerManageScreen() throws InterruptedException {
-		Thread.sleep(15000);
-		driver.navigate().refresh();
+		Thread.sleep(5000);
 		Username(email);
 		Password(password);
 		Thread.sleep(3000);

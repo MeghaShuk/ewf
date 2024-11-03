@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.WNS_Project.Utilities.Reports"/>
-    <listener class-name="com.WNS_Project.Utilities.SuiteListeners"/>
-  </listeners>
-  <test name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode">
+      <class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist">
         <methods>
-          <include name="DeployNode"/>
+          <include name="Solutionwhitelist"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="delayAfterTests"/>
         </methods>
-      </class> <!-- com.WNS_Project.testCases.TC_01_Deploy_WNSNode -->
+      </class> <!-- com.WNS_Project.testCases.TC_07_Solutionwhitelist -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

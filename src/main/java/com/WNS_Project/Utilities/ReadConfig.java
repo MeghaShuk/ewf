@@ -53,4 +53,9 @@ public class ReadConfig {
 		String key = pro.getProperty("Mnemonic");
 		return key;
 	}
+
+	public String getsolutionwhitelist() {
+		String sol = pro.getProperty("solution");
+		return sol;
+	}
 }
