@@ -23,7 +23,7 @@ public class Deploy_WNSNode extends BaseClass {
 	@FindBy(xpath = "//../../div/div[2]/div[1]/div[2]/img[@alt=\"AWS Logo\"]/../../../../button")
 	WebElement deploy_button;
 
-	@FindBy(xpath = "//input[@id = \"input-:rh:\"]")
+	@FindBy(xpath = "//input[@name=\"name\"]")
 	WebElement nodename;
 
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")

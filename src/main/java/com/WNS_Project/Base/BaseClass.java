@@ -84,7 +84,7 @@ public class BaseClass {
 	// toggle button for VaaS
 	public void Toggle() {
 		WebElement togglebutton = driver.findElement(By.xpath("/html/body/div[2]/div/header/div[2]/div[1]/label/div"));
-		WebDriverWait wait = new WebDriverWait(driver, 120);
+		WebDriverWait wait = new WebDriverWait(driver, 150);
 		wait.until(ExpectedConditions.elementToBeClickable(togglebutton));
 		togglebutton.click();
 	}

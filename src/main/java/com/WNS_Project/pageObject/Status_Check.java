@@ -49,7 +49,7 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button[contains(text(), \"Solution Whitelist\")]")
 	WebElement sw;
 
-	@FindBy(xpath = "//*[@id=\"input-:rl:\"]")
+	@FindBy(xpath = "(//input[@class=\"peer w-full appearance-none truncate border font-medium focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 h-[60px] text-base mx-4 rounded-none border-x-0 border-t-0 border-white bg-transparent p-1 text-brand-light placeholder:text-sm placeholder:text-sidebar-darkSidebar focus:ring-0\"])[1]")
 	WebElement solution_name;
 
 	@FindBy(xpath = "//div[@id=\"accordion-0-content\"]/div[1]/div[1]/div/div")

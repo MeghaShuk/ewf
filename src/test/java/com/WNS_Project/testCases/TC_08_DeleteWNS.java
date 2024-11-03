@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
 import com.WNS_Project.Base.BaseClass;
 import com.WNS_Project.pageObject.Status_Check;
 
@@ -23,6 +22,7 @@ public class TC_08_DeleteWNS extends BaseClass {
 		Thread.sleep(5000);
 		status.Delete();
 		status.Confirm_Del();
+		Thread.sleep(2000);
 		driver.navigate().to(workermanage);
 	}
 }
