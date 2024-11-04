@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-04T08:15:53Z" name="Suite" finished-at="2024-11-04T08:27:13Z" duration-ms="680780">
+  <suite started-at="2024-11-04T10:06:22Z" name="Suite" finished-at="2024-11-04T10:17:51Z" duration-ms="689149">
     <groups>
     </groups>
-    <test started-at="2024-11-04T08:15:53Z" name="Test" finished-at="2024-11-04T08:27:13Z" duration-ms="680780">
+    <test started-at="2024-11-04T10:06:22Z" name="Test" finished-at="2024-11-04T10:17:51Z" duration-ms="689149">
       <class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T13:45:53Z" name="setup" finished-at="2024-11-04T13:46:15Z" duration-ms="22331" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T15:36:22Z" name="setup" finished-at="2024-11-04T15:36:46Z" duration-ms="24001" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DeployNode()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T13:46:15Z" name="DeployNode" finished-at="2024-11-04T13:46:23Z" duration-ms="8354" status="FAIL">
+        <test-method signature="DeployNode()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T15:36:46Z" name="DeployNode" finished-at="2024-11-04T15:37:01Z" duration-ms="15009" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
               <![CDATA[no such window: target window already closed
@@ -20,9 +20,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '22-ZEE-LAP070', ip: '192.168.31.114', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\MEGHAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57871}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d2ace78a38fc3de0bfadbcfb32ee6629
-*** Element info: {Using=xpath, value=//button[contains(text(), "Sign in")]}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\MEGHAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55871}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a83f6468c7bccf355351f1515ee9230]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
@@ -31,9 +30,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '22-ZEE-LAP070', ip: '192.168.31.114', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\MEGHAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57871}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d2ace78a38fc3de0bfadbcfb32ee6629
-*** Element info: {Using=xpath, value=//button[contains(text(), "Sign in")]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\MEGHAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55871}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a83f6468c7bccf355351f1515ee9230
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -45,12 +43,9 @@ Session ID: d2ace78a38fc3de0bfadbcfb32ee6629
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.WNS_Project.Base.BaseClass.Submit(BaseClass.java:81)
-	at com.WNS_Project.Base.BaseClass.WorkerManageScreen(BaseClass.java:97)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at com.WNS_Project.Base.BaseClass.WorkerManageScreen(BaseClass.java:100)
 	at com.WNS_Project.testCases.TC_01_Deploy_WNSNode.DeployNode(TC_01_Deploy_WNSNode.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -83,11 +78,11 @@ Session ID: d2ace78a38fc3de0bfadbcfb32ee6629
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeployNode -->
-        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T13:46:23Z" name="delayAfterTests" finished-at="2024-11-04T13:57:13Z" duration-ms="650007" status="PASS">
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T15:37:01Z" name="delayAfterTests" finished-at="2024-11-04T15:47:51Z" duration-ms="650005" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delayAfterTests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T13:57:13Z" name="teardown" finished-at="2024-11-04T13:57:13Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@198d6542]" started-at="2024-11-04T15:47:51Z" name="teardown" finished-at="2024-11-04T15:47:51Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
