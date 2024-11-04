@@ -15,7 +15,6 @@
 			<class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist" />
 			<class name="com.WNS_Project.testCases.TC_08_DeleteWNS" />
 
-
 		</classes>
 	</test> <!--
 	Test -->
