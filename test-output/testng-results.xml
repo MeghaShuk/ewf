@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-11-05T19:40:11Z" name="Suite" finished-at="2024-11-05T19:58:53Z" duration-ms="1122223">
+    <groups>
+    </groups>
+    <test started-at="2024-11-05T19:40:11Z" name="Test1" finished-at="2024-11-05T19:50:47Z" duration-ms="636740">
+      <class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@327af41b]" started-at="2024-11-06T01:10:11Z" name="setup" finished-at="2024-11-06T01:10:39Z" duration-ms="28000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="DeployNode()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@327af41b]" started-at="2024-11-06T01:10:39Z" name="DeployNode" finished-at="2024-11-06T01:11:42Z" duration-ms="62938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeployNode -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@327af41b]" started-at="2024-11-06T01:11:42Z" name="delayAfterTests" finished-at="2024-11-06T01:19:43Z" duration-ms="481030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_01_Deploy_WNSNode@327af41b]" started-at="2024-11-06T01:19:43Z" name="teardown" finished-at="2024-11-06T01:19:43Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_01_Deploy_WNSNode -->
+      <class name="com.WNS_Project.testCases.TC_02_Status_Check">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@6cb6decd]" started-at="2024-11-06T01:19:43Z" name="setup" finished-at="2024-11-06T01:20:09Z" duration-ms="25500" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@6cb6decd]" started-at="2024-11-06T01:20:09Z" name="Status" finished-at="2024-11-06T01:20:32Z" duration-ms="23211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@6cb6decd]" started-at="2024-11-06T01:20:32Z" name="delayAfterTests" finished-at="2024-11-06T01:20:47Z" duration-ms="15268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_02_Status_Check@6cb6decd]" started-at="2024-11-06T01:20:47Z" name="teardown" finished-at="2024-11-06T01:20:47Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_02_Status_Check -->
+    </test> <!-- Test1 -->
+    <test started-at="2024-11-05T19:50:48Z" name="Test2" finished-at="2024-11-05T19:51:52Z" duration-ms="64180">
+      <class name="com.WNS_Project.testCases.TC_03_Download_Summary">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_03_Download_Summary@18e36d14]" started-at="2024-11-06T01:20:48Z" name="setup" finished-at="2024-11-06T01:21:14Z" duration-ms="25916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_03_Download_Summary@18e36d14]" started-at="2024-11-06T01:21:14Z" name="Status" finished-at="2024-11-06T01:21:37Z" duration-ms="22776" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_03_Download_Summary@18e36d14]" started-at="2024-11-06T01:21:37Z" name="delayAfterTests" finished-at="2024-11-06T01:21:52Z" duration-ms="15259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_03_Download_Summary@18e36d14]" started-at="2024-11-06T01:21:52Z" name="teardown" finished-at="2024-11-06T01:21:52Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_03_Download_Summary -->
+    </test> <!-- Test2 -->
+    <test started-at="2024-11-05T19:51:53Z" name="Test3" finished-at="2024-11-05T19:55:39Z" duration-ms="226352">
+      <class name="com.WNS_Project.testCases.TC_06_Logs">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_06_Logs@5a9f4771]" started-at="2024-11-06T01:24:11Z" name="setup" finished-at="2024-11-06T01:24:40Z" duration-ms="28672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_06_Logs@5a9f4771]" started-at="2024-11-06T01:24:40Z" name="Status" finished-at="2024-11-06T01:25:23Z" duration-ms="43577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_06_Logs@5a9f4771]" started-at="2024-11-06T01:25:24Z" name="delayAfterTests" finished-at="2024-11-06T01:25:39Z" duration-ms="15333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_06_Logs@5a9f4771]" started-at="2024-11-06T01:25:39Z" name="teardown" finished-at="2024-11-06T01:25:39Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_06_Logs -->
+      <class name="com.WNS_Project.testCases.TC_04_Generate_NewKey">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_04_Generate_NewKey@352c1b98]" started-at="2024-11-06T01:21:53Z" name="setup" finished-at="2024-11-06T01:22:17Z" duration-ms="24646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_04_Generate_NewKey@352c1b98]" started-at="2024-11-06T01:22:17Z" name="Status" finished-at="2024-11-06T01:22:46Z" duration-ms="29218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_04_Generate_NewKey@352c1b98]" started-at="2024-11-06T01:22:47Z" name="delayAfterTests" finished-at="2024-11-06T01:23:02Z" duration-ms="15244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_04_Generate_NewKey@352c1b98]" started-at="2024-11-06T01:23:02Z" name="teardown" finished-at="2024-11-06T01:23:02Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_04_Generate_NewKey -->
+      <class name="com.WNS_Project.testCases.TC_05_Import_Key">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_05_Import_Key@21129f1f]" started-at="2024-11-06T01:23:02Z" name="setup" finished-at="2024-11-06T01:23:29Z" duration-ms="27402" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Status()[pri:0, instance:com.WNS_Project.testCases.TC_05_Import_Key@21129f1f]" started-at="2024-11-06T01:23:29Z" name="Status" finished-at="2024-11-06T01:23:56Z" duration-ms="26363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Status -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_05_Import_Key@21129f1f]" started-at="2024-11-06T01:23:56Z" name="delayAfterTests" finished-at="2024-11-06T01:24:11Z" duration-ms="15232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_05_Import_Key@21129f1f]" started-at="2024-11-06T01:24:11Z" name="teardown" finished-at="2024-11-06T01:24:11Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_05_Import_Key -->
+    </test> <!-- Test3 -->
+    <test started-at="2024-11-05T19:55:39Z" name="Test4" finished-at="2024-11-05T19:58:53Z" duration-ms="193819">
+      <class name="com.WNS_Project.testCases.TC_08_DeleteWNS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_08_DeleteWNS@7d286fb6]" started-at="2024-11-06T01:27:38Z" name="setup" finished-at="2024-11-06T01:28:07Z" duration-ms="29021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Solutionwhitelist()[pri:0, instance:com.WNS_Project.testCases.TC_08_DeleteWNS@7d286fb6]" started-at="2024-11-06T01:28:07Z" name="Solutionwhitelist" finished-at="2024-11-06T01:28:53Z" duration-ms="45331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Solutionwhitelist -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_08_DeleteWNS@7d286fb6]" started-at="2024-11-06T01:28:53Z" name="teardown" finished-at="2024-11-06T01:28:53Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_08_DeleteWNS -->
+      <class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.WNS_Project.testCases.TC_07_Solutionwhitelist@48793bef]" started-at="2024-11-06T01:25:39Z" name="setup" finished-at="2024-11-06T01:26:04Z" duration-ms="25027" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Solutionwhitelist()[pri:0, instance:com.WNS_Project.testCases.TC_07_Solutionwhitelist@48793bef]" started-at="2024-11-06T01:26:04Z" name="Solutionwhitelist" finished-at="2024-11-06T01:27:23Z" duration-ms="78648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Solutionwhitelist -->
+        <test-method is-config="true" signature="delayAfterTests()[pri:0, instance:com.WNS_Project.testCases.TC_07_Solutionwhitelist@48793bef]" started-at="2024-11-06T01:27:23Z" name="delayAfterTests" finished-at="2024-11-06T01:27:38Z" duration-ms="15369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delayAfterTests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.WNS_Project.testCases.TC_07_Solutionwhitelist@48793bef]" started-at="2024-11-06T01:27:38Z" name="teardown" finished-at="2024-11-06T01:27:38Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.WNS_Project.testCases.TC_07_Solutionwhitelist -->
+    </test> <!-- Test4 -->
+  </suite> <!-- Suite -->
+</testng-results>

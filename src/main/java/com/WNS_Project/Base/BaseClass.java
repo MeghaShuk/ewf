@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.WNS_Project.Utilities.ReadConfig;
+import com.WNS_Project.Utilities.ScreenRecorderUtil;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -32,6 +34,7 @@ public class BaseClass {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		baseurl = readconfig.getApplicationURL();

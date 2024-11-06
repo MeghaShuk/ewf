@@ -1,20 +1,21 @@
 package com.WNS_Project.testCases;
 
-import java.awt.AWTException;
-import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
+import com.WNS_Project.Utilities.ScreenRecorderUtil;
 import com.WNS_Project.pageObject.Status_Check;
 
 public class TC_04_Generate_NewKey extends BaseClass {
 
 	@Test
-	public void Status() throws IOException, InterruptedException, AWTException {
+	public void Status() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
+
+		ScreenRecorderUtil.startRecord("NewKey");
 
 		WorkerManageScreen();
 		Actions action = new Actions(driver);
@@ -26,12 +27,14 @@ public class TC_04_Generate_NewKey extends BaseClass {
 	}
 
 	@AfterClass
-	public void delayAfterTests() {
+	public void delayAfterTests() throws Exception {
 		try {
-			System.out.print("Adding 20-sec delay before running the next test class...");
-			Thread.sleep(20000);
+			System.out.print("Adding 15-seconds delay before running the next test class...");
+			Thread.sleep(15000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
+		ScreenRecorderUtil.stopRecord();
 	}
 }

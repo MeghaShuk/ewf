@@ -14,7 +14,7 @@ import com.WNS_Project.Base.BaseClass;
 public class Deploy_WNSNode extends BaseClass {
 
 	Actions action = new Actions(driver);
-	WebDriverWait wait = new WebDriverWait(driver, 120);
+	WebDriverWait wait = new WebDriverWait(driver, 150);
 
 	public Deploy_WNSNode(WebDriver driver) {
 		PageFactory.initElements(driver, this);

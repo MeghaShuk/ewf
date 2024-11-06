@@ -1,19 +1,20 @@
 package com.WNS_Project.testCases;
 
-import java.awt.AWTException;
-import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
+import com.WNS_Project.Utilities.ScreenRecorderUtil;
 import com.WNS_Project.pageObject.Status_Check;
 
 public class TC_08_DeleteWNS extends BaseClass {
 
 	@Test
-	public void Solutionwhitelist() throws IOException, InterruptedException, AWTException {
+	public void Solutionwhitelist() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
+
+		ScreenRecorderUtil.startRecord("Delete");
 
 		WorkerManageScreen();
 		Actions action = new Actions(driver);
@@ -24,5 +25,8 @@ public class TC_08_DeleteWNS extends BaseClass {
 		status.Confirm_Del();
 		Thread.sleep(2000);
 		driver.navigate().to(workermanage);
+		Thread.sleep(20000);
+
+		ScreenRecorderUtil.stopRecord();
 	}
 }
