@@ -22,12 +22,13 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		deploy.Managed_Deploy_button();
 		deploy.Node_Name(nodename);
 		Thread.sleep(2000);
-		deploy.ChooseManagedRegion();
-		// deploy.ChooseInstance();
-		// deploy.ChooseCloudAccount();
+//		deploy.ChooseManagedRegion();
+		deploy.ChooseAWSRegion();
+		deploy.ChooseInstance();
+		deploy.ChooseCloudAccount();
 		Thread.sleep(2000);
-		// Actions action = new Actions(driver);
-		// action.sendKeys(Keys.PAGE_DOWN).perform();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).perform();
 		deploy.Continue_button();
 		deploy.Public_Gateway();
 		deploy.Continue_button();
