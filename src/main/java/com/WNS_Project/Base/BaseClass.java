@@ -36,6 +36,7 @@ public class BaseClass {
 	public String nodename = readconfig.getNodeName();
 	public String importedkey = readconfig.getMnemonicKey();
 	public String solution_whitelist = readconfig.getsolutionwhitelist();
+	
 
 	public static WebDriver driver;
 

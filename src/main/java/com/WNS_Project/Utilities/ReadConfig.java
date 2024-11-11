@@ -24,41 +24,41 @@ public class ReadConfig {
 
 	// Application URL
 	public String getApplicationURL() {
-		String url = pro.getProperty("baseURL");
+		String url = System.getenv("baseURL");
 		return url;
 	}
 
 	// Worker Node Manage URL
 	public String getWorkerNodeManageURL() {
-		String url = pro.getProperty("workernode_manage");
+		String url = System.getenv("workernode_manage");
 		return url;
 	}
 
 	// Login Email
 	public String getEmail() {
-		String Email = pro.getProperty("login_email");
+		String Email = System.getenv("login_email");
 		return Email;
 	}
 
 	// Login Password
 	public String getPassword() {
-		String Password = pro.getProperty("login_password");
+		String Password = System.getenv("login_password");
 		return Password;
 	}
 
 	// Node Name
 	public String getNodeName() {
-		String name = pro.getProperty("NodeName");
+		String name = System.getenv("NodeName");
 		return name;
 	}
 
 	public String getMnemonicKey() {
-		String key = pro.getProperty("Mnemonic");
+		String key = System.getenv("Mnemonic");
 		return key;
 	}
 
 	public String getsolutionwhitelist() {
-		String sol = pro.getProperty("solution");
+		String sol = System.getenv("solution");
 		return sol;
 	}
 }
