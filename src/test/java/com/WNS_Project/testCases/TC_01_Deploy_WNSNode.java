@@ -19,7 +19,8 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		System.out.println("Started here");
 		WorkerManageScreen();
 		Thread.sleep(2000);
-		deploy.Managed_Deploy_button();
+//		deploy.Managed_Deploy_button();
+		deploy.AWS_Deploy_button();
 		deploy.Node_Name(nodename);
 		Thread.sleep(2000);
 //		deploy.ChooseManagedRegion();
