@@ -201,11 +201,6 @@
 							<goals>
 								<goal>load</goal>
 							</goals>
-							<configuration>
-								<files>
-									<file>src/main/resource/Configuration/config.properties</file>
-								</files>
-							</configuration>
 						</execution>
 					</executions>
 				</plugin>
@@ -222,6 +217,9 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M5</version>
 					<configuration>
+						<systemPropertyVariables>
+							<configFile>src/main/resources/Configuration/config.properties</configFile>
+						</systemPropertyVariables>
 						<forkCount>0</forkCount>
 						<argLine>-Xmx1024m</argLine>
 						<suiteXmlFiles>
