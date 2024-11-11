@@ -1,24 +1,25 @@
 package com.WNS_Project.Utilities;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadConfig {
 
-	private Properties pro = new Properties();
+	Properties pro = new Properties();;
 
 	public ReadConfig() {
 
-		try (InputStream input = getClass().getClassLoader().getResourceAsStream("Configuration/config.properties")) {
-			if (input == null) {
-				System.out.println("Sorry, unable to find config.properties");
-				return;
-			}
-			pro.load(input);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		}
+		pro = new Properties();
+        // Retrieve the file path from the system property (set in pom.xml or as an environment variable)
+        String configFilePath = System.getProperty("configFile", "src/main/resources/Configuration/config.properties");
+        
+        try (FileInputStream input = new FileInputStream(configFilePath)) {
+            pro.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 	// Application URL
