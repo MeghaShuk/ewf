@@ -60,6 +60,14 @@
 			<version>5.7.0</version>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edge-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-edge-driver</artifactId>
+			<version>4.8.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
@@ -95,7 +103,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.0</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
