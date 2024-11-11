@@ -25,6 +25,7 @@ public class ReadConfig {
 	// Application URL
 	public String getApplicationURL() {
 		String url = System.getenv("baseURL");
+		System.out.println("URL-----"+url);
 		return url;
 	}
 
