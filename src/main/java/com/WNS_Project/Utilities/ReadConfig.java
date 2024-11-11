@@ -1,21 +1,23 @@
 package com.WNS_Project.Utilities;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadConfig {
 
-	Properties pro;
+	private Properties pro = new Properties();
 
 	public ReadConfig() {
-		File src = new File("./Configuration/config.properties");
-		try {
-			FileInputStream fis = new FileInputStream(src);
-			pro = new Properties();
-			pro.load(fis);
-		} catch (Exception e) {
-			System.out.println("The excetption is: " + e.getMessage());
+
+		try (InputStream input = getClass().getClassLoader().getResourceAsStream("Configuration/config.properties")) {
+			if (input == null) {
+				System.out.println("Sorry, unable to find config.properties");
+				return;
+			}
+			pro.load(input);
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 	}
 

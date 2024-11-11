@@ -203,8 +203,7 @@
 							</goals>
 							<configuration>
 								<files>
-									<file>
-										Configuration/config.properties</file>
+									<file>src/main/resource/Configuration/config.properties</file>
 								</files>
 							</configuration>
 						</execution>
