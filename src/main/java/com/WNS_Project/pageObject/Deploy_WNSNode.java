@@ -14,20 +14,26 @@ import com.WNS_Project.Base.BaseClass;
 public class Deploy_WNSNode extends BaseClass {
 
 	Actions action = new Actions(driver);
-	WebDriverWait wait = new WebDriverWait(driver, 150);
+	WebDriverWait wait = new WebDriverWait(driver, 100);
 
 	public Deploy_WNSNode(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//../../div/div[2]/div[1]/div[2]/img[@alt=\"AWS Logo\"]/../../../../button")
-	WebElement deploy_button;
+	WebElement deploy_button_aws;
+
+	@FindBy(xpath = "//../../div/div[2]/div[1]/div[2]/img[@alt=\"zeeve-managed Logo\"]/../../../../button")
+	WebElement deploy_button_managed;
 
 	@FindBy(xpath = "//input[@name=\"name\"]")
 	WebElement nodename;
 
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")
-	WebElement region;
+	WebElement aws_region;
+
+	@FindBy(xpath = "//div/input[@id=\"react-select-:rj:-input\"]")
+	WebElement managed_region;
 
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rj:-input\"]")
 	WebElement instancetype;
@@ -50,9 +56,14 @@ public class Deploy_WNSNode extends BaseClass {
 	@FindBy(xpath = "//div[@id=\"modal-:r8:\"]/div[2]/button[contains(text(),\"Cancel\")]")
 	WebElement popup_cancel;
 
-	public void Deploy_button() {
-		wait.until(ExpectedConditions.elementToBeClickable(deploy_button));
-		deploy_button.click();
+	public void AWS_Deploy_button() {
+		wait.until(ExpectedConditions.elementToBeClickable(deploy_button_aws));
+		deploy_button_aws.click();
+	}
+
+	public void Managed_Deploy_button() {
+		wait.until(ExpectedConditions.elementToBeClickable(deploy_button_managed));
+		deploy_button_managed.click();
 	}
 
 	public void Node_Name(String name) {
@@ -60,21 +71,31 @@ public class Deploy_WNSNode extends BaseClass {
 		nodename.sendKeys(name);
 	}
 
-	public void ChooseRegion() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(region));
-		for (int i = 0; i < 5; i++) {
-			action.moveToElement(region).click();
-			Thread.sleep(3000);
-			region.sendKeys(Keys.ARROW_DOWN);
+	public void ChooseAWSRegion() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(aws_region));
+		for (int i = 0; i < 3; i++) {
+			action.moveToElement(aws_region).click();
+			Thread.sleep(2000);
+			aws_region.sendKeys(Keys.ARROW_DOWN);
 		}
-		region.sendKeys(Keys.ENTER);
+		aws_region.sendKeys(Keys.ENTER);
+	}
+
+	public void ChooseManagedRegion() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(managed_region));
+		for (int i = 0; i < 3; i++) {
+			action.moveToElement(managed_region).click();
+			Thread.sleep(2000);
+			managed_region.sendKeys(Keys.ARROW_DOWN);
+		}
+		managed_region.sendKeys(Keys.ENTER);
 	}
 
 	public void ChooseInstance() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(instancetype));
 		for (int i = 0; i < 3; i++) {
 			action.moveToElement(instancetype).click();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			instancetype.sendKeys(Keys.ARROW_DOWN);
 		}
 		instancetype.sendKeys(Keys.ENTER);
@@ -84,7 +105,7 @@ public class Deploy_WNSNode extends BaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(cloudaccount));
 		for (int i = 0; i < 1; i++) {
 			action.moveToElement(cloudaccount).click();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			cloudaccount.sendKeys(Keys.ARROW_DOWN);
 		}
 		cloudaccount.sendKeys(Keys.ENTER);

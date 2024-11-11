@@ -11,7 +11,7 @@ import com.WNS_Project.pageObject.Status_Check;
 public class TC_06_Logs extends BaseClass {
 
 	@Test
-	public void Status() throws Exception {
+	public void Logs() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
 
@@ -22,9 +22,9 @@ public class TC_06_Logs extends BaseClass {
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
 		status.LogTab();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 	}
 
 	@AfterClass

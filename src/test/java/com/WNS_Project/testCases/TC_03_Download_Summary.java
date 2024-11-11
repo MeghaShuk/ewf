@@ -11,7 +11,7 @@ import com.WNS_Project.pageObject.Status_Check;
 public class TC_03_Download_Summary extends BaseClass {
 
 	@Test
-	public void Status() throws Exception {
+	public void DownloadSummary() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
 

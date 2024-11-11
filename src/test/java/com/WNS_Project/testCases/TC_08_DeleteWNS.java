@@ -10,7 +10,7 @@ import com.WNS_Project.pageObject.Status_Check;
 public class TC_08_DeleteWNS extends BaseClass {
 
 	@Test
-	public void Solutionwhitelist() throws Exception {
+	public void Deletion() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
 
@@ -25,7 +25,7 @@ public class TC_08_DeleteWNS extends BaseClass {
 		status.Confirm_Del();
 		Thread.sleep(2000);
 		driver.navigate().to(workermanage);
-		Thread.sleep(20000);
+		Thread.sleep(5000);
 
 		ScreenRecorderUtil.stopRecord();
 	}

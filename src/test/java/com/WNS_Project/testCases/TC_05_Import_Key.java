@@ -11,7 +11,7 @@ import com.WNS_Project.pageObject.Status_Check;
 public class TC_05_Import_Key extends BaseClass {
 
 	@Test
-	public void Status() throws Exception {
+	public void Import_Key() throws Exception {
 
 		Status_Check status = new Status_Check(driver);
 
@@ -20,8 +20,9 @@ public class TC_05_Import_Key extends BaseClass {
 		WorkerManageScreen();
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(3000);
 		status.View_Button();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		status.Import_Button();
 		status.Key_Input(importedkey);
 		status.Save_Button();

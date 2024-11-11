@@ -18,16 +18,16 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		ScreenRecorderUtil.startRecord("DeployNode");
 
 		WorkerManageScreen();
-		Thread.sleep(3000);
-		deploy.Deploy_button();
+		Thread.sleep(2000);
+		deploy.Managed_Deploy_button();
 		deploy.Node_Name(nodename);
-		Thread.sleep(3000);
-		deploy.ChooseRegion();
-		deploy.ChooseInstance();
-		deploy.ChooseCloudAccount();
-		Thread.sleep(3000);
-		Actions action = new Actions(driver);
-		action.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
+		deploy.ChooseManagedRegion();
+		// deploy.ChooseInstance();
+		// deploy.ChooseCloudAccount();
+		Thread.sleep(2000);
+		// Actions action = new Actions(driver);
+		// action.sendKeys(Keys.PAGE_DOWN).perform();
 		deploy.Continue_button();
 		deploy.Public_Gateway();
 		deploy.Continue_button();
@@ -39,8 +39,8 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 	@AfterClass
 	public void delayAfterTests() throws Exception {
 		try {
-			System.out.println("Adding a 10-minute delay before running the next test class...");
-			Thread.sleep(480000);
+			System.out.println("Adding a 9-minute delay before running the next test class...");
+			Thread.sleep(540000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

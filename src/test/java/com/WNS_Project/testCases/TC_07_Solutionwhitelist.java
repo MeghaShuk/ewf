@@ -25,7 +25,7 @@ public class TC_07_Solutionwhitelist extends BaseClass {
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
 		status.SW();
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		status.SolutionName(solution_whitelist);
 		Thread.sleep(2000);
 		status.Sol_Save_Button();
@@ -36,6 +36,7 @@ public class TC_07_Solutionwhitelist extends BaseClass {
 		status.SW();
 		Thread.sleep(2000);
 		status.Remove_Sol();
+		Thread.sleep(2000);
 		status.Sol_Save_Button();
 		Thread.sleep(20000);
 	}
