@@ -200,8 +200,10 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.1</version>
+					<version>3.0.0-M5</version>
 					<configuration>
+						<forkedProcessTimeoutInSeconds>60</forkedProcessTimeoutInSeconds>
+						<argLine>-Xmx1024m</argLine>
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
