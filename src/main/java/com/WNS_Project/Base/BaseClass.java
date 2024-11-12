@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -15,17 +16,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.WNS_Project.Utilities.ReadConfig;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
+
+	protected static final Logger logger = Logger.getLogger(BaseClass.class);
 
 	ReadConfig readconfig = new ReadConfig();
 
@@ -36,22 +36,15 @@ public class BaseClass {
 	public String nodename = readconfig.getNodeName();
 	public String importedkey = readconfig.getMnemonicKey();
 	public String solution_whitelist = readconfig.getsolutionwhitelist();
-	
 
 	public static WebDriver driver;
 
-	public WebDriver startbrowser(String browser) {
-		if (browser.equalsIgnoreCase("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		} else if (browser.equalsIgnoreCase("Chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("Edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		}
-		return driver;
+	public void logInfo(String message) {
+		logger.info(message);
+	}
+
+	public void logError(String message, Throwable throwable) {
+		logger.error(message, throwable);
 	}
 
 	@BeforeClass
@@ -114,8 +107,8 @@ public class BaseClass {
 		togglebutton.click();
 	}
 
+	// common method to login for WNS
 	public void WorkerManageScreen() throws InterruptedException {
-		Thread.sleep(3000);
 		Username(email);
 		Password(password);
 		Thread.sleep(2000);
@@ -125,6 +118,7 @@ public class BaseClass {
 		driver.navigate().to(workermanage);
 	}
 
+	// method to capture screenshot
 	public String getScreenshotPath(String TestCaseName, WebDriver driver) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);

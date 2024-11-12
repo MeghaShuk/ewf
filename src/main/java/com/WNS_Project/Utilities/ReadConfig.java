@@ -2,7 +2,6 @@ package com.WNS_Project.Utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadConfig {
@@ -12,14 +11,14 @@ public class ReadConfig {
 	public ReadConfig() {
 
 		pro = new Properties();
-        // Retrieve the file path from the system property (set in pom.xml or as an environment variable)
-        String configFilePath = System.getProperty("configFile", "src/main/resources/Configuration/config.properties");
-        
-        try (FileInputStream input = new FileInputStream(configFilePath)) {
-            pro.load(input);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+		String configFilePath = System.getProperty("configFile", "src/main/resources/Configuration/config.properties");
+
+		try (FileInputStream input = new FileInputStream(configFilePath)) {
+			pro.load(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// Application URL

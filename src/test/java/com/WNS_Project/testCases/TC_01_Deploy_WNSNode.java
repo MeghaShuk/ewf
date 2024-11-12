@@ -16,17 +16,17 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		Deploy_WNSNode deploy = new Deploy_WNSNode(driver);
 
 		ScreenRecorderUtil.startRecord("DeployNode");
-		System.out.println("Started here");
+
 		WorkerManageScreen();
 		Thread.sleep(2000);
-//		deploy.Managed_Deploy_button();
-		deploy.AWS_Deploy_button();
+		deploy.Managed_Deploy_button();
+		// deploy.AWS_Deploy_button();
 		deploy.Node_Name(nodename);
 		Thread.sleep(2000);
-//		deploy.ChooseManagedRegion();
-		deploy.ChooseAWSRegion();
-		deploy.ChooseInstance();
-		deploy.ChooseCloudAccount();
+		deploy.ChooseManagedRegion();
+		// deploy.ChooseAWSRegion();
+		// deploy.ChooseInstance();
+		// deploy.ChooseCloudAccount();
 		Thread.sleep(2000);
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -36,7 +36,8 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		deploy.Generate_Key();
 		deploy.Continue_button();
 		deploy.Popup_Continue();
-		System.out.println("Reached here");
+		
+		logger.info("Login test completed");
 	}
 
 	@AfterClass
