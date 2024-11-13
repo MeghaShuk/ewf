@@ -22,7 +22,7 @@ public class TC_03_Download_Summary extends BaseClass {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		status.Download_Button();
 	}
 
