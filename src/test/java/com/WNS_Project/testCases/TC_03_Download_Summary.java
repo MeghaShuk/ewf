@@ -23,8 +23,9 @@ public class TC_03_Download_Summary extends BaseClass {
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
 		status.View_Button();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		status.Download_Button();
+		Thread.sleep(2000);
 		System.out.println("Clicked on Download button");
 	}
 
