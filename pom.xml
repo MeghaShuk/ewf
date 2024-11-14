@@ -214,11 +214,13 @@
 							<configFile>
 								src/main/resources/Configuration/config.properties</configFile>
 						</systemPropertyVariables>
-						<forkCount>0</forkCount>
 						<argLine>-Xmx1024m</argLine>
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
+						<includes>
+                    <include>**/Test*.java</include>
+                </includes>
 					</configuration>
 				</plugin>
 				<plugin>

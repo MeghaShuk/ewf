@@ -126,11 +126,21 @@ public class BaseClass {
 
 	// method to capture screenshot
 	public String getScreenshotPath(String TestCaseName, WebDriver driver) throws IOException {
+		if (driver == null) {
+            throw new IllegalStateException("WebDriver is not initialized. Cannot capture screenshot.");
+        }
+
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String destpath = System.getProperty("user.dir") + "\\report-output\\" + TestCaseName + ".png";
+		
 		File file = new File(destpath);
 		FileUtils.copyFile(source, file);
-		return destpath;
+		
+		// Validate screenshot directory
+        if (destpath == null || destpath.isEmpty()) {
+            throw new IllegalStateException("Screenshot directory is not defined.");
 	}
-}
+		return destpath;
+}	
+}	
