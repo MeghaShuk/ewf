@@ -25,13 +25,14 @@ public class TC_03_Download_Summary extends BaseClass {
 		status.View_Button();
 		Thread.sleep(5000);
 		status.Download_Button();
+		System.out.println("Clicked on Download button");
 	}
 
 	@AfterClass
 	public void delayAfterTests() throws Exception {
 		try {
-			System.out.println("Adding a 15-seconds delay before running the next test class...");
-			Thread.sleep(15000);
+			System.out.println("Adding a 10-seconds delay before running the next test class...");
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

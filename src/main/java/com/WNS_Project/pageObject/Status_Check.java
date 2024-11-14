@@ -22,7 +22,7 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//td[4]/div/a/button")
 	WebElement view_button;
 
-	@FindBy(xpath = "(//button/img[@alt=\"download\"])[1]")
+	@FindBy(xpath = "//button/img[@alt=\"download\"]")
 	WebElement download;
 
 	@FindBy(xpath = "//button/span[contains(text(), \"Create new\")]")

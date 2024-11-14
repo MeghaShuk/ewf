@@ -27,8 +27,8 @@ public class TC_02_Status_Check extends BaseClass {
 	@AfterClass
 	public void delayAfterTests() throws Exception {
 		try {
-			System.out.println("Adding a 15-seconds delay before running the next test class...");
-			Thread.sleep(15000);
+			System.out.println("Adding a 10-seconds delay before running the next test class...");
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
