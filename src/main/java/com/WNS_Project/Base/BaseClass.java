@@ -56,7 +56,7 @@ public class BaseClass {
 		driver.get(baseurl);
 		driver.manage().window().maximize();
 		driver.navigate().refresh();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 		Thread.sleep(5000);
 		driver.navigate().refresh();
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -109,9 +109,15 @@ public class BaseClass {
 
 	// common method to login for WNS
 	public void WorkerManageScreen() throws InterruptedException {
+		Thread.sleep(3000);
 		Username(email);
 		Password(password);
-		Thread.sleep(2000);
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+		Username(email);
+		Password(password);
+		Thread.sleep(3000);
 		Submit();
 		Thread.sleep(2000);
 		Toggle();

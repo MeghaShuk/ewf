@@ -243,6 +243,20 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
+				<!-- Allure Maven plugin for generating reports -->
+				<plugin>
+					<groupId>io.qameta.allure</groupId>
+					<artifactId>allure-maven</artifactId>
+					<version>2.20.1</version> <!-- Use the latest version -->
+					<executions>
+						<execution>
+							<goals>
+								<goal>serve</goal> <!-- Generate report during
+								the build -->
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
