@@ -45,10 +45,9 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 	@AfterClass
 	public void delayAfterTests() throws Exception {
 
-		// System.out.println("Adding a 9-minutes delay before running the next test
-		// class...");
+		System.out.println("Adding a 9-minutes delay before running the next test class...");
 
-		Thread.sleep(240000);
+		Thread.sleep(540000);
 
 		boolean isNameVisible = waitForNodeToBe();
 		System.out.println(isNameVisible);
@@ -84,7 +83,7 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 			return true;
 
 		} else {
-			System.out.println("False Status printed " + status.getText());
+			System.out.println("False Status printed " + "" + status.getText());
 			return false;
 		}
 	}
