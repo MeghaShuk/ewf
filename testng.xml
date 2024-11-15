@@ -1,83 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
- 
+
 <suite name="Suite">
- 
-	<parameter name="browser" value="chrome" />
-	<listeners>
-		<listener class-name="com.WNS_Project.Utilities.Listeners" />
-	</listeners>
- 
+
 	<test name="Test1">
+
+		<parameter name="browser" value="chrome" />
 		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode" />
- 
-		</classes>
-	</test> <!--
-	Test -->
- 
-	<test name="Test2">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_02_Status_Check" />
- 
-		</classes>
-	</test> <!--
-	Test -->
- 
-	<test name="Test3">
-		<classes>
- 
+
 			<class name="com.WNS_Project.testCases.TC_03_Download_Summary" />
- 
-		</classes>
-	</test><!--
-	Test -->
- 
-	<test name="Test4">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_04_Create_NewKey" />
- 
-		</classes>
-	</test><!--
-	Test -->
- 
-	<test name="Test5">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_05_Import_Key" />
- 
-		</classes>
-	</test><!--
-	Test -->
- 
-	<test name="Test6">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_06_Logs" />
- 
-		</classes>
-	</test><!--
-	Test -->
- 
-	<test name="Test7">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_07_Solutionwhitelist" />
- 
+
 		</classes>
 	</test> <!--
 	Test -->
- 
-	<test name="Test8">
-		<classes>
- 
-			<class name="com.WNS_Project.testCases.TC_08_DeleteWNS" />
- 
-		</classes>
-	</test> <!--
-	Test -->
+
 </suite> <!--
 Suite -->

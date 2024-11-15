@@ -25,6 +25,7 @@ public class TC_05_Import_Key extends BaseClass {
 		Thread.sleep(3000);
 		status.Import_Button();
 		status.Key_Input(importedkey);
+		Thread.sleep(2000);
 		status.Save_Button();
 	}
 
