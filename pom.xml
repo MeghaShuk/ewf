@@ -219,8 +219,8 @@
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
 						<includes>
-                    <include>**/Test*.java</include>
-                </includes>
+							<include>**/Test*.java</include>
+						</includes>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -253,8 +253,8 @@
 					<executions>
 						<execution>
 							<goals>
-								<goal>serve</goal> <!-- Generate report during
-								the build -->
+								<goal>serve</goal>
+								<goal>report</goal>
 							</goals>
 						</execution>
 					</executions>

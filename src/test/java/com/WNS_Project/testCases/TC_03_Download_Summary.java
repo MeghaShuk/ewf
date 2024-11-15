@@ -1,7 +1,10 @@
 package com.WNS_Project.testCases;
 
+import java.io.File;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
@@ -26,6 +29,10 @@ public class TC_03_Download_Summary extends BaseClass {
 		Thread.sleep(8000);
 		status.Download_Button();
 		Thread.sleep(2000);
+
+		File downloadedFile = new File("C:\\Users\\Megha Shukla\\Downloads\\downloaded_file_name.json");
+		Assert.assertTrue(downloadedFile.exists(), "File should be downloaded");
+
 		System.out.println("Clicked on Download button");
 	}
 
