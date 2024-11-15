@@ -29,43 +29,43 @@ public class TC_03_Download_Summary extends BaseClass {
 		Thread.sleep(8000);
 		status.Download_Button();
 		Thread.sleep(2000);
-		String downloadDir = "C:\\Users\\Megha Shukla\\Downloads\\";
+		 String downloadDir = "C:\\Users\\Megha Shukla\\Downloads\\"; 
+		 
+		 File downloadedFile = waitForDownload(downloadDir);
 
-		File downloadedFile = waitForDownload(downloadDir);
-
-		// Rename the file once it is detected
-		if (downloadedFile != null) {
-			File renamedFile = new File(downloadDir + "worker_node_download.json");
-			boolean renamed = downloadedFile.renameTo(renamedFile);
-			if (renamed) {
-				System.out.println("File renamed successfully.");
-			} else {
-				System.out.println("File renaming failed.");
-			}
-		} else {
-			System.out.println("Downloaded file not found.");
-		}
+         // Rename the file once it is detected
+         if (downloadedFile != null) {
+             File renamedFile = new File(downloadDir + "worker_node_download.json");
+             boolean renamed = downloadedFile.renameTo(renamedFile);
+             if (renamed) {
+                 System.out.println("File renamed successfully.");
+             } else {
+                 System.out.println("File renaming failed.");
+             }
+         } else {
+             System.out.println("Downloaded file not found.");
+         }
 	}
+	
+    public static File waitForDownload(String downloadDir) {
+        File dir = new File(downloadDir);
+        File[] files = dir.listFiles();
+        File latestFile = null;
 
-	public static File waitForDownload(String downloadDir) {
-		File dir = new File(downloadDir);
-		File[] files = dir.listFiles();
-		File latestFile = null;
+        if (files != null && files.length > 0) {
+            long lastModified = Long.MIN_VALUE;
 
-		if (files != null && files.length > 0) {
-			long lastModified = Long.MIN_VALUE;
+            for (File file : files) {
+                if (file.isFile() && file.lastModified() > lastModified) {
+                    lastModified = file.lastModified();
+                    latestFile = file;
+                }
+            }
+        }
 
-			for (File file : files) {
-				if (file.isFile() && file.lastModified() > lastModified) {
-					lastModified = file.lastModified();
-					latestFile = file;
-				}
-			}
-		}
-
-		// Return the most recent file
-		return latestFile;
-	}
+        // Return the most recent file
+        return latestFile;
+    }
 
 	@AfterClass
 	public void delayAfterTests() throws Exception {

@@ -38,7 +38,7 @@ public class TC_07_Solutionwhitelist extends BaseClass {
 		status.Remove_Sol();
 		Thread.sleep(2000);
 		status.Sol_Save_Button();
-		Thread.sleep(22000);
+		Thread.sleep(20000);
 	}
 
 	@AfterClass

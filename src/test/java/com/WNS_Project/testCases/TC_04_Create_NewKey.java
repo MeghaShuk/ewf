@@ -23,7 +23,6 @@ public class TC_04_Create_NewKey extends BaseClass {
 		status.View_Button();
 		Thread.sleep(2000);
 		status.Create_Button();
-		Thread.sleep(2000);
 		status.Confirm_Button();
 	}
 

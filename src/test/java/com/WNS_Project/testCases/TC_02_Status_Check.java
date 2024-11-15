@@ -24,7 +24,6 @@ public class TC_02_Status_Check extends BaseClass {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
-		Thread.sleep(2000);
 	}
 
 	@AfterClass
