@@ -3,11 +3,13 @@
  
 <suite name="Suite">
  
+	<parameter name="browser" value="chrome" />
+
 	<listeners>
 		<listener class-name="com.WNS_Project.Utilities.Listeners" />
 	</listeners>
  
-	<test name="Test3">
+<test name="Test3">
 		<classes>
  
 			<class name="com.WNS_Project.testCases.TC_03_Download_Summary" />
@@ -15,6 +17,7 @@
 		</classes>
 	</test><!--
 	Test -->
- 
+
+
 </suite> <!--
 Suite -->
