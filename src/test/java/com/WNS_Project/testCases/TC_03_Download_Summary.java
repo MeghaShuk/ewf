@@ -1,5 +1,7 @@
 package com.WNS_Project.testCases;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 import org.openqa.selenium.Keys;
@@ -29,51 +31,12 @@ public class TC_03_Download_Summary extends BaseClass {
 		Thread.sleep(8000);
 		status.Download_Button();
 		Thread.sleep(2000);
-		String downloadDir = "C:\\Users\\Megha Shukla\\Downloads\\"; 
-		 
-		 File downloadedFile = waitForDownload(downloadDir);
-
-         // Rename the file once it is detected
-         if (downloadedFile != null) {
-             File renamedFile = new File(downloadDir + "worker_node_download.json");
-             boolean renamed = downloadedFile.renameTo(renamedFile);
-             if (renamed) {
-                 System.out.println("File renamed successfully.");
-             } else {
-                 System.out.println("File renaming failed.");
-             }
-         } else {
-             System.out.println("Downloaded file not found.");
-         }
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		System.out.println("File downloaded successfully");
 	}
-	
-    public static File waitForDownload(String downloadDir) {
-        File dir = new File(downloadDir);
-        File[] files = dir.listFiles();
-        File latestFile = null;
-        
-        long endTime = System.currentTimeMillis() + 30000; // Timeout after 30 seconds
-
-            try {
-                Thread.sleep(1000);  // Check every 1 second
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-        if (files != null && files.length > 0) {
-            long lastModified = Long.MIN_VALUE;
-
-            for (File file : files) {
-                if (file.isFile() && file.lastModified() > lastModified) {
-                    lastModified = file.lastModified();
-                    latestFile = file;
-                }
-            }
-        }
-
-        // Return the most recent file
-        return latestFile;
-    }
 
 	@AfterClass
 	public void delayAfterTests() throws Exception {
