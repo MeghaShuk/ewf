@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [Suite]]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="Edge"/>
+  <test name="Test1(failed)(failed)">
+    <classes>
+      <class name="com.WNS_Project.testCases.TC_01_Deploy_WNSNode">
+        <methods>
+          <include name="DeployNode"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="delayAfterTests"/>
+        </methods>
+      </class> <!-- com.WNS_Project.testCases.TC_01_Deploy_WNSNode -->
+    </classes>
+  </test> <!-- Test1(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.WNS_Project.testCases.TC_03_Download_Summary">
+        <methods>
+          <include name="teardown"/>
+          <include name="DownloadSummary"/>
+          <include name="delayAfterTests"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.WNS_Project.testCases.TC_03_Download_Summary -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
