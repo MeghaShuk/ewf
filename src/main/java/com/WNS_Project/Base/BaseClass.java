@@ -54,9 +54,13 @@ public class BaseClass {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("download.prompt_for_download=false");         
 		options.addArguments("download.directory_upgrade=true");            
-		options.addArguments("safebrowsing.enabled=false");                   
-		options.addArguments("--headless");	
-		options.addArguments("--start-maximized"); 
+		options.addArguments("safebrowsing.enabled=false");   
+		options.addArguments("--headless");   // Run in headless mode
+		options.addArguments("--disable-gpu");
+		options.addArguments("window-size=1920x1080");
+		options.addArguments("disable-infobars");
+		options.addArguments("disable-extensions");
+		options.addArguments("--no-sandbox");
 		
 		WebDriverManager.chromedriver().setup();
 
