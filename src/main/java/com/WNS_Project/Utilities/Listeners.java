@@ -28,7 +28,7 @@ public class Listeners extends BaseClass implements ITestListener {
 		extentTest.get().log(Status.PASS, "Successful");
 
 		try {
-			extentTest.get().addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName(), driver),
+			extentTest.get().addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName()),
 					result.getMethod().getMethodName());
 		} catch (IOException e) {
 
@@ -50,7 +50,7 @@ public class Listeners extends BaseClass implements ITestListener {
 
 		}
 		try {
-			extentTest.get().addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName(), driver),
+			extentTest.get().addScreenCaptureFromPath(getScreenshotPath(result.getMethod().getMethodName()),
 					result.getMethod().getMethodName());
 		} catch (IOException e) {
 

@@ -2,6 +2,8 @@ package com.WNS_Project.Base;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -16,7 +18,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -51,20 +52,9 @@ public class BaseClass {
 	@BeforeClass
 	public void setup() throws InterruptedException {
 
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("download.prompt_for_download=false");         
-		options.addArguments("download.directory_upgrade=true");            
-		options.addArguments("safebrowsing.enabled=false");   
-		options.addArguments("--headless");   // Run in headless mode
-		options.addArguments("--disable-gpu");
-		options.addArguments("window-size=1920x1080");
-		options.addArguments("disable-infobars");
-		options.addArguments("disable-extensions");
-		options.addArguments("--no-sandbox");
-		
 		WebDriverManager.chromedriver().setup();
 
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
 		driver.manage().window().maximize();
@@ -115,7 +105,7 @@ public class BaseClass {
 	// toggle button for VaaS
 	public void Toggle() {
 		WebElement togglebutton = driver.findElement(By.xpath("/html/body/div[2]/div/header/div[2]/div[1]/label/div"));
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver,120);
 		wait.until(ExpectedConditions.elementToBeClickable(togglebutton));
 		togglebutton.click();
 	}
@@ -138,22 +128,23 @@ public class BaseClass {
 	}
 
 	// method to capture screenshot
-	public String getScreenshotPath(String TestCaseName, WebDriver driver) throws IOException {
-		if (driver == null) {
-            throw new IllegalStateException("WebDriver is not initialized. Cannot capture screenshot.");
-        }
-
+	public String getScreenshotPath(String TestCaseName) throws IOException {
+		
+		LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = now.format(formatter);
+		
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String destpath = System.getProperty("user.dir") + "\\report-output\\" + TestCaseName + ".png";
-		
+
 		File file = new File(destpath);
 		FileUtils.copyFile(source, file);
-		
+
 		// Validate screenshot directory
-        if (destpath == null || destpath.isEmpty()) {
-            throw new IllegalStateException("Screenshot directory is not defined.");
-	}
+		if (destpath == null || destpath.isEmpty()) {
+			throw new IllegalStateException("Screenshot directory is not defined.");
+		}
 		return destpath;
-}	
-}	
+	}
+}
