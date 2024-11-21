@@ -27,7 +27,7 @@ public class TC_08_DeleteWNS extends BaseClass {
 		status.Confirm_Del();
 		Thread.sleep(2000);
 		driver.navigate().to(workermanage);
-		Thread.sleep(130000);
+		Thread.sleep(180000);
 		driver.navigate().refresh();
 		boolean isNameVisible = waitForNodeToBe();
 

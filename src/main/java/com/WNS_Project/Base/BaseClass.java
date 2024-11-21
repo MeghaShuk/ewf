@@ -86,13 +86,14 @@ public class BaseClass {
 
 		Set<String> handles = driver.getWindowHandles();
 		List<String> handleList = new ArrayList<>(handles);
-
+		driver.navigate().refresh();
 		// Switch to new window
 		for (String handle : handleList) {
 			if (!handle.equals(mainWindow)) {
 				driver.switchTo().window(handle);
 				driver.get(baseurl);
 				driver.manage().window().maximize();
+
 				break;
 			}
 		}
@@ -130,14 +131,16 @@ public class BaseClass {
 
 	// common method to login for WNS
 	public void WorkerManageScreen() throws InterruptedException {
-		Thread.sleep(3000);
 		Username(email);
 		Password(password);
-		driver.manage().deleteAllCookies();
-		driver.navigate().refresh();
-		Thread.sleep(3000);
-		Username(email);
-		Password(password);
+		Thread.sleep(2000);
+
+		WebDriverWait wait = new WebDriverWait(driver, 50);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("grecaptcha-badge")));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("var badge = document.getElementsByClassName('grecaptcha-badge'); "
+				+ "if (badge.length > 0) { badge[0].remove(); }");
+
 		Thread.sleep(3000);
 		Submit();
 		Thread.sleep(2000);
