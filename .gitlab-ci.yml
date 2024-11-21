@@ -3,18 +3,20 @@ stages:
   - clean_workspace
   - git
   - run_tests
+  - test
   - generate_report
   - publish_report
   - publish_extent_report
-  - test
 
 variables:
   MAVEN_OPTS: "-Xmx2048m"
 
-# before_script:
-#   - export MAVEN_HOME=/path/to/maven # Set the path to Maven installation
-#   - export PATH=$MAVEN_HOME/bin:$PATH
-#   - export JAVA_HOME=/path/to/java # Set the path to Java home
+before_script:
+  # Install Allure command-line tool
+  - apt-get update && apt-get install -y wget unzip
+  - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
+  - unzip allure.zip -d /opt/
+  - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
 
 clean_workspace:
   stage: clean_workspace
@@ -34,6 +36,15 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
+
+test:
+  stage: test
+  script:
+    - echo "Running JUnit tests..."
+    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+  artifacts:
+    paths:
+      - target/surefire-reports/*.xml
 
 generate_report:
   stage: generate_report
@@ -57,15 +68,6 @@ publish_extent_report:
   artifacts:
     paths:
       - report-output/extentreport.html
-
-test:
-  stage: test
-  script:
-    - echo "Running JUnit tests..."
-    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
-  artifacts:
-    paths:
-      - target/surefire-reports/*.xml
 
 after_script:
   - echo "Cleaning up..."
