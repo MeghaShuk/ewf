@@ -1,0 +1,71 @@
+stages:
+  - clean_workspace
+  - git
+  - run_tests
+  - generate_report
+  - publish_report
+  - publish_extent_report
+  - test
+
+variables:
+  MAVEN_OPTS: "-Xmx2048m"
+
+before_script:
+  - export MAVEN_HOME=/path/to/maven # Set the path to Maven installation
+  - export PATH=$MAVEN_HOME/bin:$PATH
+  - export JAVA_HOME=/path/to/java # Set the path to Java home
+
+clean_workspace:
+  stage: clean_workspace
+  script:
+    - echo "Cleaning workspace..."
+    # - rm -rf *
+
+git:
+  stage: git
+  script:
+    - echo "Cloning repository and getting dependencies..."
+    # - git clone https://github.com/MeghaShuk/ewf.git
+    - mvn dependency:tree
+
+run_tests:
+  stage: run_tests
+  script:
+    - echo "Running tests..."
+    - mvn clean compile
+
+generate_report:
+  stage: generate_report
+  script:
+    - echo "Generating Allure report..."
+    - mvn allure:serve
+
+publish_report:
+  stage: publish_report
+  script:
+    - echo "Publishing Allure report..."
+    - allure generate target/allure-results --clean -o target/allure-report
+  artifacts:
+    paths:
+      - target/allure-report
+
+publish_extent_report:
+  stage: publish_extent_report
+  script:
+    - echo "Publishing Extent Report..."
+  artifacts:
+    paths:
+      - report-output/extentreport.html
+
+test:
+  stage: test
+  script:
+    - echo "Running JUnit tests..."
+    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+  artifacts:
+    paths:
+      - target/surefire-reports/*.xml
+
+after_script:
+  - echo "Cleaning up..."
+
