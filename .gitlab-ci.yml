@@ -17,6 +17,13 @@ before_script:
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
   - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
+  - echo "Updating and installing necessary packages..."
+  - apt-get update -y
+  - apt-get install -y wget unzip chromium-browser
+  - wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - mv chromedriver /usr/local/bin/
+  - chmod +x /usr/local/bin/chromedriver
 
 clean_workspace:
   stage: clean_workspace
