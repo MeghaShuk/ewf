@@ -62,7 +62,7 @@ public class BaseClass {
         // Create a map to store Chrome preferences
         Map<String, Object> prefs = new HashMap<>();
         
-        String downloadPath = System.getProperty("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ewf-pipeline\\downloadedFiles");
+        String downloadPath = System.getProperty("user.dir") + "\\downloadedFiles";
         prefs.put("download.default_directory", downloadPath);
 
         // Disable download prompt (so file is downloaded automatically)
