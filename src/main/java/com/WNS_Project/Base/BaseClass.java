@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
@@ -18,6 +20,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -53,8 +56,26 @@ public class BaseClass {
 	public void setup() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
+		
+		ChromeOptions options = new ChromeOptions();
 
-		driver = new ChromeDriver();
+        // Create a map to store Chrome preferences
+        Map<String, Object> prefs = new HashMap<>();
+        
+        String downloadPath = System.getProperty("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ewf-pipeline\\downloadedFiles");
+        prefs.put("download.default_directory", downloadPath);
+
+        // Disable download prompt (so file is downloaded automatically)
+        prefs.put("download.prompt_for_download", false);
+
+        // Apply preferences to ChromeOptions
+        options.setExperimentalOption("prefs", prefs);
+
+        // Initialize WebDriver with the configured ChromeOptions
+        driver = new ChromeDriver(options);
+
+
+		//driver = new ChromeDriver();
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
 		driver.manage().window().maximize();
