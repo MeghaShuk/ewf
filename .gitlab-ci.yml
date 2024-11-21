@@ -1,4 +1,4 @@
-image: maven:3.8.6-jdk-11
+image: maven:3.8.6-jdk-8
 stages:
   - clean_workspace
   - git
@@ -11,10 +11,10 @@ stages:
 variables:
   MAVEN_OPTS: "-Xmx2048m"
 
-before_script:
-  - export MAVEN_HOME=/path/to/maven # Set the path to Maven installation
-  - export PATH=$MAVEN_HOME/bin:$PATH
-  - export JAVA_HOME=/path/to/java # Set the path to Java home
+# before_script:
+#   - export MAVEN_HOME=/path/to/maven # Set the path to Maven installation
+#   - export PATH=$MAVEN_HOME/bin:$PATH
+#   - export JAVA_HOME=/path/to/java # Set the path to Java home
 
 clean_workspace:
   stage: clean_workspace
