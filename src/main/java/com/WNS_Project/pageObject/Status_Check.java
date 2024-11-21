@@ -10,7 +10,7 @@ import com.WNS_Project.Base.BaseClass;
 
 public class Status_Check extends BaseClass {
 
-	WebDriverWait wait = new WebDriverWait(driver, 100);
+	WebDriverWait wait = new WebDriverWait(driver, 120);
 
 	public Status_Check(WebDriver driver) {
 		PageFactory.initElements(driver, this);

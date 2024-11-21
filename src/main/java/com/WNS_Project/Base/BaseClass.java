@@ -56,26 +56,23 @@ public class BaseClass {
 	public void setup() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
-		
+
 		ChromeOptions options = new ChromeOptions();
 
-        // Create a map to store Chrome preferences
-        Map<String, Object> prefs = new HashMap<>();
-        
-        String downloadPath = System.getProperty("user.dir") + "\\downloadedFiles";
-        prefs.put("download.default_directory", downloadPath);
+		// Create a map to store Chrome preferences
+		Map<String, Object> prefs = new HashMap<>();
 
-        // Disable download prompt (so file is downloaded automatically)
-        prefs.put("download.prompt_for_download", false);
+		String downloadPath = System.getProperty("user.dir") + "\\downloadedFiles";
+		prefs.put("download.default_directory", downloadPath);
 
-        // Apply preferences to ChromeOptions
-        options.setExperimentalOption("prefs", prefs);
+		// Disable download prompt (so file is downloaded automatically)
+		prefs.put("download.prompt_for_download", false);
 
-        // Initialize WebDriver with the configured ChromeOptions
-        driver = new ChromeDriver(options);
+		// Apply preferences to ChromeOptions
+		options.setExperimentalOption("prefs", prefs);
 
-
-		//driver = new ChromeDriver();
+		// Initialize WebDriver with the configured ChromeOptions
+		driver = new ChromeDriver(options);
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
 		driver.manage().window().maximize();
@@ -126,7 +123,7 @@ public class BaseClass {
 	// toggle button for VaaS
 	public void Toggle() {
 		WebElement togglebutton = driver.findElement(By.xpath("/html/body/div[2]/div/header/div[2]/div[1]/label/div"));
-		WebDriverWait wait = new WebDriverWait(driver,120);
+		WebDriverWait wait = new WebDriverWait(driver, 120);
 		wait.until(ExpectedConditions.elementToBeClickable(togglebutton));
 		togglebutton.click();
 	}
@@ -150,11 +147,11 @@ public class BaseClass {
 
 	// method to capture screenshot
 	public String getScreenshotPath(String TestCaseName) throws IOException {
-		
+
 		LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
-        String timestamp = now.format(formatter);
-		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+		String timestamp = now.format(formatter);
+
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String destpath = System.getProperty("user.dir") + "\\report-output\\" + TestCaseName + ".png";

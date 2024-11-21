@@ -10,7 +10,9 @@ import com.WNS_Project.Base.BaseClass;
 import com.WNS_Project.Utilities.ScreenRecorderUtil;
 import com.WNS_Project.pageObject.Deploy_WNSNode;
 
-public class TC_01_Deploy_WNSNode extends BaseClass {
+public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
+
+	WebElement status;
 
 	@Test
 	public void DeployNode() throws Exception {
@@ -38,17 +40,9 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 		deploy.Generate_Key();
 		deploy.Continue_button();
 		deploy.Popup_Continue();
-
-		logger.info("Login test completed");
-	}
-
-	@AfterClass
-	public void delayAfterTests() throws Exception {
-
-		System.out.println("Adding a 9-minutes delay before running the next test class...");
-
-		Thread.sleep(540000);
-
+		Thread.sleep(20000);
+		driver.navigate().to(workermanage);
+		Thread.sleep(6000);
 		boolean isNameVisible = waitForNodeToBe();
 		System.out.println(isNameVisible);
 
@@ -60,11 +54,21 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 			System.out.println("Test Passed: Node Name is visible");
 		}
 
+		logger.info("Login test completed");
+	}
+
+	@AfterClass
+	public void delayAfterTests() throws Exception {
+
+		System.out.println("Adding a 9-minutes delay before running the next test class...");
+
+		Thread.sleep(540000);
+
 		boolean isStatusChanged = waitForNodeStatusToBe();
 		System.out.println(isStatusChanged);
 
 		if (!isStatusChanged) {
-			System.out.println("Test failed: Node is still in provisioning state.");
+			System.out.println("Test failed: Node is still in" + (status.getText()) + "state.");
 		}
 
 		else {
@@ -83,7 +87,7 @@ public class TC_01_Deploy_WNSNode extends BaseClass {
 			return true;
 
 		} else {
-			System.out.println("False Status printed " + "" + status.getText());
+			System.out.println("False Status printed " + status.getText());
 			return false;
 		}
 	}

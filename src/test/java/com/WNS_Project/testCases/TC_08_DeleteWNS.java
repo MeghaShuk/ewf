@@ -1,6 +1,8 @@
 package com.WNS_Project.testCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
@@ -25,8 +27,32 @@ public class TC_08_DeleteWNS extends BaseClass {
 		status.Confirm_Del();
 		Thread.sleep(2000);
 		driver.navigate().to(workermanage);
-		Thread.sleep(5000);
+		Thread.sleep(130000);
+		driver.navigate().refresh();
+		boolean isNameVisible = waitForNodeToBe();
+
+		if (!isNameVisible) {
+			System.out.println("Test Passed: Node is Deleted");
+		}
+
+		else {
+			System.out.println("Test Failed: Node is not Deleted");
+		}
 
 		ScreenRecorderUtil.stopRecord();
+	}
+
+	private boolean waitForNodeToBe() {
+		WebElement nodename = driver.findElement(By.xpath("//tr/td[1]/div"));
+		String namecheck = nodename.getText();
+
+		if (namecheck.equals("newnode01")) {
+			System.out.println("True Name printed " + nodename.getText());
+			return true;
+
+		} else {
+			System.out.println("False Name printed" + nodename.getText());
+			return false;
+		}
 	}
 }
