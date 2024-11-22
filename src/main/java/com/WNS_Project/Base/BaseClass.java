@@ -139,7 +139,7 @@ public class BaseClass {
 	public void WorkerManageScreen() throws InterruptedException {
 		Username(email);
 		Password(password);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("grecaptcha-badge")));
@@ -149,7 +149,8 @@ public class BaseClass {
 
 		Thread.sleep(3000);
 		Submit();
-		Thread.sleep(2000);
+		System.out.println("Login Completed");
+		Thread.sleep(5000);
 		Toggle();
 		driver.navigate().to(workermanage);
 	}
