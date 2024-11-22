@@ -98,6 +98,7 @@ public class BaseClass {
 				driver.switchTo().window(handle);
 				driver.get(baseurl);
 				driver.manage().window().maximize();
+				System.out.println("BASE URL ----" + baseurl);
 
 				break;
 			}

@@ -62,7 +62,6 @@ test:
   stage: test
   script:
     - echo "Running tests..."
-    - mvn clean install
     - ls target/classes
     - mvn test
     #- mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
