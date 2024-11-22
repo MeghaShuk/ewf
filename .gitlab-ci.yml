@@ -60,8 +60,9 @@ run_tests:
 test:
   stage: test
   script:
-    - echo "Running JUnit tests..."
-    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+    - echo "Running tests with environment variables"
+    #- mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+    - mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
   artifacts:
     paths:
       - target/surefire-reports/*.xml
