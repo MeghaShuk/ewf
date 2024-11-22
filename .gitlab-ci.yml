@@ -2,8 +2,6 @@ image: maven:3.8.6-jdk-8
 stages:
   - clean_workspace
   - git
-  - variables
-  - before_script
   - test
   - generate_report
   - publish_report
@@ -52,26 +50,6 @@ git:
     # - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
 
-variables:
-  BASE_URL: ""
-  WORKERNODE_MANAGE: ""
-  LOGIN_EMAIL: ""
-  LOGIN_PASSWORD: ""
-  NODE_NAME: ""
-  MNEMONIC: ""
-  SOLUTION: ""
-
-# Load properties from config.properties into environment variables
-before_script:
-  - echo "Loading properties from config.properties into environment variables..."
-  - export BASE_URL=$(grep 'baseURL' src/main/resources/config.properties | cut -d'=' -f2)
-  - export WORKERNODE_MANAGE=$(grep 'workernode_manage' src/main/resources/config.properties | cut -d'=' -f2)
-  - export LOGIN_EMAIL=$(grep 'login_email' src/main/resources/config.properties | cut -d'=' -f2)
-  - export LOGIN_PASSWORD=$(grep 'login_password' src/main/resources/config.properties | cut -d'=' -f2)
-  - export NODE_NAME=$(grep 'NodeName' src/main/resources/config.properties | cut -d'=' -f2)
-  - export MNEMONIC=$(grep 'Mnemonic' src/main/resources/config.properties | cut -d'=' -f2)
-  - export SOLUTION=$(grep 'solution' src/main/resources/config.properties | cut -d'=' -f2)
-
 test:
   stage: test
   script:
@@ -80,14 +58,6 @@ test:
     - ls target/classes
     - cat target/classes/config.properties
     - mvn test
-    - echo "Running tests with environment variables:"
-    - echo "BASE_URL=$BASE_URL"
-    - echo "WORKERNODE_MANAGE=$WORKERNODE_MANAGE"
-    - echo "LOGIN_EMAIL=$LOGIN_EMAIL"
-    - echo "LOGIN_PASSWORD=$LOGIN_PASSWORD"
-    - echo "NODE_NAME=$NODE_NAME"
-    - echo "MNEMONIC=$MNEMONIC"
-    - echo "SOLUTION=$SOLUTION"
     #- mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
   artifacts:
     paths:
