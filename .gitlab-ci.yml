@@ -58,8 +58,7 @@ test:
     - ls target/classes
     - cat target/classes/config.properties
     #- mvn test -DconfigFile=src/main/resources/config.properties
-    - mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
-  artifacts:
+    - mvn test
     paths:
       - target/surefire-reports/*.xml
 
