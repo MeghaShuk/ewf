@@ -59,6 +59,7 @@ test:
     - cat target/classes/config.properties
     #- mvn test -DconfigFile=src/main/resources/config.properties
     - mvn test
+  artifacts:
     paths:
       - target/surefire-reports/*.xml
 
