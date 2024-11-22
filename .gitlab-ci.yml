@@ -2,7 +2,6 @@ image: maven:3.8.6-jdk-8
 stages:
   - clean_workspace
   - git
-  - run_tests
   - test
   - generate_report
   - publish_report
@@ -51,17 +50,11 @@ git:
     # - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
 
-run_tests:
-  stage: run_tests
-  script:
-    - echo "Running tests..."
-    - mvn clean compile
-    - ls target/classes
-
 test:
   stage: test
   script:
     - echo "Running tests..."
+    - mvn clean compile
     - ls target/classes
     - mvn test
     #- mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
