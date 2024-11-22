@@ -55,8 +55,8 @@ public class BaseClass {
 	@BeforeClass
 	public void setup() throws InterruptedException {
 
-//		WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		WebDriverManager.chromedriver().setup();
+//		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
 
