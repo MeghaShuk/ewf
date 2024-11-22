@@ -71,7 +71,7 @@ public class BaseClass {
 
 		// Apply preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs);
-		
+		options.addArguments("--headless"); // Run in headless mode
 		options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
 		options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared memory
 		options.addArguments("--remote-debugging-port=9222"); // Enable remote debugging
