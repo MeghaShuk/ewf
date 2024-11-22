@@ -50,14 +50,17 @@ git:
     # - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
 
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
 test:
   stage: test
   script:
     - echo "Running tests..."
-    - mvn clean compile
+    - mvn $MAVEN_OPTS clean package
     - ls target/classes
     - cat target/classes/config.properties
-    - mvn test
+    - mvn compile test
     #- mvn clean test -DbaseURL=$baseURL -Dworkernode_manage=$workernode_manage -Dlogin_email=$login_email -Dlogin_password=$login_password -DNodeName=$Mnemonic -Dlogin_password=$Mnemonic -Dsolution=$solution
   artifacts:
     paths:
