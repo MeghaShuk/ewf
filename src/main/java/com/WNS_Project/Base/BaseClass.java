@@ -56,6 +56,7 @@ public class BaseClass {
 	public void setup() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
+//		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
 
@@ -70,6 +71,10 @@ public class BaseClass {
 
 		// Apply preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs);
+		
+		options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
+		options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared memory
+		options.addArguments("--remote-debugging-port=9222"); // Enable remote debugging
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
