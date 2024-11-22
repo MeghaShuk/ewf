@@ -61,7 +61,7 @@ test:
     - mvn test
   artifacts:
     paths:
-    - target/test-*.xml 
+      - target/surefire-reports/*.xml
 
 generate_report:
   stage: generate_report

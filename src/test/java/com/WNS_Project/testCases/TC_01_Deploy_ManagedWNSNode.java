@@ -19,7 +19,7 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 
 		Deploy_WNSNode deploy = new Deploy_WNSNode(driver);
 
-		ScreenRecorderUtil.startRecord("DeployNode");
+		//ScreenRecorderUtil.startRecord("DeployNode");
 
 		WorkerManageScreen();
 		Thread.sleep(2000);
@@ -75,7 +75,7 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 			System.out.println("Test Passed: Node is in Ready state.");
 		}
 
-		ScreenRecorderUtil.stopRecord();
+		//ScreenRecorderUtil.stopRecord();
 	}
 
 	private boolean waitForNodeStatusToBe() {
