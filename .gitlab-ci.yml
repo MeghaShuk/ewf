@@ -9,7 +9,6 @@ stages:
 
 variables:
   MAVEN_OPTS: "-Xmx2048m"
-  
 
 before_script:
   # Install Allure command-line tool
