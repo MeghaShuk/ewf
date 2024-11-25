@@ -156,8 +156,9 @@ public class BaseClass {
 		//Toggle();
 		driver.get("https://launchpad.energyweb.org/vaas/dashboard");
 		System.out.println("In VaaS Environment");
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		driver.navigate().to(workermanage);
+		System.out.println("Deployment Screen");
 	}
 
 	// method to capture screenshot
