@@ -42,6 +42,9 @@ clean_workspace:
   script:
     - echo "Cleaning workspace..."
     # - rm -rf *
+  tags:
+    - "shared"
+
 
 git:
   stage: git
@@ -49,6 +52,8 @@ git:
     - echo "Cloning repository and getting dependencies..."
     # - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
+  tags:
+    - "shared"
 
 test:
   stage: test
@@ -61,12 +66,16 @@ test:
   artifacts:
     paths:
     - target/surefire-reports/*.xml
+  tags:
+    - "shared"
 
 generate_report:
   stage: generate_report
   script:
     - echo "Generating Allure report..."
     - mvn allure:serve
+  tags:
+    - "shared"
 
 publish_report:
   stage: publish_report
@@ -76,6 +85,8 @@ publish_report:
   artifacts:
     paths:
       - target/allure-report
+  tags:
+    - "shared"
 
 publish_extent_report:
   stage: publish_extent_report
@@ -84,6 +95,8 @@ publish_extent_report:
   artifacts:
     paths:
       - report-output/extentreport.html
+  tags:
+    - "shared"
 
 after_script:
   - echo "Cleaning up..."
