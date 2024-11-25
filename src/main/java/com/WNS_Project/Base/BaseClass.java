@@ -151,8 +151,9 @@ public class BaseClass {
 		Thread.sleep(3000);
 		Submit();
 		System.out.println("Login Completed");
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		Toggle();
+		System.out.println("In VaaS Environment");
 		driver.navigate().to(workermanage);
 	}
 

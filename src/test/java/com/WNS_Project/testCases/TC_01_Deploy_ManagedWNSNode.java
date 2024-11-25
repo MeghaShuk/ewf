@@ -24,6 +24,7 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 		WorkerManageScreen();
 		Thread.sleep(2000);
 		deploy.Managed_Deploy_button();
+		System.out.println("Node Creation started");
 		// deploy.AWS_Deploy_button();
 		deploy.Node_Name(nodename);
 		Thread.sleep(3000);
