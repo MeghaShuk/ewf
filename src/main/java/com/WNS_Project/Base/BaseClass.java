@@ -151,9 +151,10 @@ public class BaseClass {
 		Thread.sleep(3000);
 		Submit();
 		System.out.println("Login Completed");
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		System.out.println("Welcome to Dashboard");
-		Toggle();
+		//Toggle();
+		driver.get("https://launchpad.energyweb.org/vaas/dashboard");
 		System.out.println("In VaaS Environment");
 		Thread.sleep(10000);
 		driver.navigate().to(workermanage);
