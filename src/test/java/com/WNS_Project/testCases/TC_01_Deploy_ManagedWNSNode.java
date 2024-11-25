@@ -22,7 +22,8 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 		//ScreenRecorderUtil.startRecord("DeployNode");
 
 		WorkerManageScreen();
-		Thread.sleep(6000);
+		Thread.sleep(10000);
+		System.out.println("Click deploy button");
 		deploy.Managed_Deploy_button();
 		System.out.println("Node Creation started");
 		// deploy.AWS_Deploy_button();
