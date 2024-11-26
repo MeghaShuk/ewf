@@ -43,7 +43,7 @@ clean_workspace:
     - echo "Cleaning workspace..."
     # - rm -rf *
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 
 git:
@@ -53,7 +53,7 @@ git:
     # - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 test:
   stage: test
@@ -67,7 +67,7 @@ test:
     paths:
     - target/surefire-reports/*.xml
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 generate_report:
   stage: generate_report
@@ -75,7 +75,7 @@ generate_report:
     - echo "Generating Allure report..."
     - mvn allure:serve
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 publish_report:
   stage: publish_report
@@ -86,7 +86,7 @@ publish_report:
     paths:
       - target/allure-report
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 publish_extent_report:
   stage: publish_extent_report
@@ -96,7 +96,7 @@ publish_extent_report:
     paths:
       - report-output/extentreport.html
   tags:
-    - "shared"
+    - "Ewf Wns Automation"
 
 after_script:
   - echo "Cleaning up..."
