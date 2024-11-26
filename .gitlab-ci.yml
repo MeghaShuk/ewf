@@ -1,4 +1,4 @@
-image: maven:3.8.6-openjdk-16
+image: maven:3.8.3-openjdk-16
 stages:
   - clean_workspace
   - test
