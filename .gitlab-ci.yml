@@ -1,4 +1,4 @@
-image: maven:3.8.3-openjdk-16
+image: maven:3.8.5-openjdk-17
 stages:
   - clean_workspace
   - test
@@ -11,24 +11,24 @@ variables:
 
 before_script:
   # Install Allure command-line tool
-  - apt-get update && apt-get install -y wget unzip
+  - apk update && apk add --no-cache wget unzip bash
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
   - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
   - echo "Updating and installing necessary packages..."
-  - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+  - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub
 
     # Add Google Chrome's repository
   - sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 
     # Update apt repositories
-  - apt-get update -y
+  - apk update
 
     # Install Google Chrome (stable version)
-  - apt-get install -y google-chrome-stable
+  - apk add --no-cache google-chrome-stable
 
     # Install dependencies for ChromeDriver and unzip
-  - apt-get install -y chromium
+  - apk add --no-cache chromium
 
     # Download and install ChromeDriver (latest version for Chrome 114 in this case)
   - wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
