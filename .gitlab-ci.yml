@@ -1,41 +1,41 @@
-image: maven:3.8.5-openjdk-17
+image: maven:3.8.5-openjdk-11
 stages:
   - clean_workspace
   - test
   - generate_report
   - publish_report
   - publish_extent_report
-
+ 
 variables:
   MAVEN_OPTS: "-Xmx2048m"
-
+ 
 before_script:
   # Install Allure command-line tool
-  - apk update && apk add --no-cache wget unzip bash
+  - apt-get update && apt-get install -y wget unzip
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
   - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
   - echo "Updating and installing necessary packages..."
-  - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub
-
+  - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+ 
     # Add Google Chrome's repository
   - sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
-
+ 
     # Update apt repositories
-  - apk update
-
+  - apt-get update -y
+ 
     # Install Google Chrome (stable version)
-  - apk add --no-cache google-chrome-stable
-
+  - apt-get install -y google-chrome-stable
+ 
     # Install dependencies for ChromeDriver and unzip
-  - apk add --no-cache chromium
-
+  - apt-get install -y chromium
+ 
     # Download and install ChromeDriver (latest version for Chrome 114 in this case)
   - wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - mv chromedriver /usr/local/bin/
   - chmod +x /usr/local/bin/chromedriver
-
+ 
 clean_workspace:
   stage: clean_workspace
   script:
@@ -43,8 +43,8 @@ clean_workspace:
     # - rm -rf *
   tags:
     - "Ewf Wns Automation"
-
-
+ 
+ 
 # git:
 #   stage: git
 #   script:
@@ -53,7 +53,7 @@ clean_workspace:
 #     - mvn dependency:tree
 #   tags:
 #     - "Ewf Wns Automation"
-
+ 
 test:
   stage: test
   script:
@@ -67,7 +67,7 @@ test:
     - target/surefire-reports/*.xml
   tags:
     - "Ewf Wns Automation"
-
+ 
 generate_report:
   stage: generate_report
   script:
@@ -75,7 +75,7 @@ generate_report:
     - mvn allure:serve
   tags:
     - "Ewf Wns Automation"
-
+ 
 publish_report:
   stage: publish_report
   script:
@@ -86,7 +86,7 @@ publish_report:
       - target/allure-report
   tags:
     - "Ewf Wns Automation"
-
+ 
 publish_extent_report:
   stage: publish_extent_report
   script:
@@ -96,8 +96,6 @@ publish_extent_report:
       - report-output/extentreport.html
   tags:
     - ""
-
+ 
 after_script:
   - echo "Cleaning up..."
-  
-
