@@ -48,7 +48,7 @@ public class TC_05_Import_Key extends BaseClass {
 		Thread.sleep(3000);
 		status.View_Button();
 		Thread.sleep(7000);
-		status.SeedPhrase_Button();
+		//status.SeedPhrase_Button();
 		Thread.sleep(3000);
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 		status.Import_Button();
@@ -57,7 +57,7 @@ public class TC_05_Import_Key extends BaseClass {
 		Thread.sleep(20000);
 		status.View_Button();
 		Thread.sleep(7000);
-		status.SeedPhrase_Button();
+		//status.SeedPhrase_Button();
 		Thread.sleep(2000);
 		SeedPhrase();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
