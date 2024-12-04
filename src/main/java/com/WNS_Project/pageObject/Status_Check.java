@@ -89,7 +89,7 @@ public class Status_Check extends BaseClass {
 		Thread.sleep(5000);
 		Actions action = new Actions(driver);
 		action.moveToElement(seed_phrase_click);
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		action.click(seed_phrase_click);
 	}
 
