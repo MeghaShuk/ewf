@@ -25,6 +25,9 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button/img[@alt=\"download\"]")
 	WebElement download;
 
+	@FindBy(css = "body > div.flex.h-screen.overflow-y-hidden.bg-white > div > div > div.flex.flex-col.gap-3.rounded-lg.border.p-3.lg\\:gap-6.lg\\:p-6.w-full.border-brand-lightGray.bg-brand-darkThemeGray.\\!p-0.text-brand-light.shadow-md > div > div.w-full.p-6 > div > div > div.grid.grid-cols-1.gap-6.lg\\:grid-cols-12 > div.space-y-6.lg\\:col-span-8 > div.grid.grid-cols-1.gap-6.md\\:grid-cols-12 > div:nth-child(1) > div > div:nth-child(3) > div.flex.items-center.justify-between > svg")
+	WebElement seed_phrase_click;
+
 	@FindBy(xpath = "//button/span[contains(text(), \"Create new\")]")
 	WebElement create_button;
 
@@ -49,7 +52,7 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button[contains(text(), \"Solution Whitelist\")]")
 	WebElement sw;
 
-	@FindBy(xpath = "(//input[@class=\"peer w-full appearance-none truncate border font-medium focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 h-[60px] text-base mx-4 rounded-none border-x-0 border-t-0 border-white bg-transparent p-1 text-brand-light placeholder:text-sm placeholder:text-sidebar-darkSidebar focus:ring-0\"])[1]")
+	@FindBy(xpath = "(//div[@class=\"relative flex h-max w-full\"]/input)[1]")
 	WebElement solution_name;
 
 	@FindBy(xpath = "//div[@id=\"accordion-0-content\"]/div[1]/div[1]/div/div")
@@ -77,6 +80,11 @@ public class Status_Check extends BaseClass {
 	public void Download_Button() {
 		wait.until(ExpectedConditions.elementToBeClickable(download));
 		download.click();
+	}
+
+	public void SeedPhrase_Button() {
+		wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
+		seed_phrase_click.click();
 	}
 
 	public void Create_Button() {

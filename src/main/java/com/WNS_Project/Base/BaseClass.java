@@ -1,15 +1,19 @@
 package com.WNS_Project.Base;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -23,8 +27,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import com.WNS_Project.Utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -33,6 +35,8 @@ public class BaseClass {
 	protected static final Logger logger = Logger.getLogger(BaseClass.class);
 
 	ReadConfig readconfig = new ReadConfig();
+
+	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 
 	public String baseurl;
 	public String workermanage = readconfig.getWorkerNodeManageURL();
@@ -44,19 +48,10 @@ public class BaseClass {
 
 	public static WebDriver driver;
 
-	public void logInfo(String message) {
-		logger.info(message);
-	}
-
-	public void logError(String message, Throwable throwable) {
-		logger.error(message, throwable);
-	}
-
 	@BeforeClass
 	public void setup() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
-//		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
 
@@ -71,10 +66,12 @@ public class BaseClass {
 
 		// Apply preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs);
-		options.addArguments("--headless"); // Run in headless mode
-		options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
-		options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared memory
-		options.addArguments("--remote-debugging-port=9222"); // Enable remote debugging
+		// options.addArguments("--headless"); // Run in headless mode
+		// options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
+		// options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared
+		// memory
+		// options.addArguments("--remote-debugging-port=9222"); // Enable remote
+		// debugging
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
@@ -98,7 +95,6 @@ public class BaseClass {
 				driver.switchTo().window(handle);
 				driver.get(baseurl);
 				driver.manage().window().maximize();
-				System.out.println("BASE URL ----" + baseurl);
 
 				break;
 			}
@@ -107,6 +103,7 @@ public class BaseClass {
 
 	@AfterClass
 	public void teardown() {
+
 		// driver.quit();
 	}
 
@@ -141,24 +138,23 @@ public class BaseClass {
 		Username(email);
 		Password(password);
 		Thread.sleep(5000);
-
-		WebDriverWait wait = new WebDriverWait(driver, 50);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("grecaptcha-badge")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("location.reload(true);");
+		Username(email);
+		Password(password);
+		Thread.sleep(2000);
+
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("grecaptcha-badge")));
 		js.executeScript("var badge = document.getElementsByClassName('grecaptcha-badge'); "
 				+ "if (badge.length > 0) { badge[0].remove(); }");
 
-		Thread.sleep(3000);
 		Submit();
 		System.out.println("Login Completed");
 		Thread.sleep(5000);
-		System.out.println("Welcome to Dashboard");
-		//Toggle();
-		driver.get("https://launchpad.energyweb.org/vaas/dashboard");
-		System.out.println("In VaaS Environment");
+		Toggle();
 		Thread.sleep(5000);
 		driver.navigate().to(workermanage);
-		System.out.println("Deployment Screen");
 	}
 
 	// method to capture screenshot
@@ -180,5 +176,27 @@ public class BaseClass {
 			throw new IllegalStateException("Screenshot directory is not defined.");
 		}
 		return destpath;
+	}
+
+	public static FileInputStream getScreenshotAsFileInputStream() throws IOException {
+		TakesScreenshot ts1 = (TakesScreenshot) driver;
+		File src = ts1.getScreenshotAs(OutputType.FILE);
+		return new FileInputStream(src);
+	}
+
+	// Method to determine shift based on the time of day
+	protected String getShift() {
+		int hour = new Date().getHours();
+		if (hour >= 6 && hour < 14) {
+			return "Morning Shift at " + getTimestamp();
+		} else {
+			return "Evening Shift at " + getTimestamp();
+		}
+	}
+
+	// Method to get the current timestamp in a readable format
+	protected String getTimestamp() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(new Date()); // Format the current date and time
 	}
 }
