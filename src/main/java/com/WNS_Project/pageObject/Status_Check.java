@@ -83,9 +83,10 @@ public class Status_Check extends BaseClass {
 		download.click();
 	}
 
-	public void SeedPhrase_Button() {
-		wait.until(ExpectedConditions.visibilityOf(seed_phrase_click));
+	public void SeedPhrase_Button() throws InterruptedException {
+		// wait.until(ExpectedConditions.visibilityOf(seed_phrase_click));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", seed_phrase_click);
+		Thread.sleep(5000);
 		seed_phrase_click.click();
 	}
 
