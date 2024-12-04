@@ -83,7 +83,7 @@ public class Status_Check extends BaseClass {
 	}
 
 	public void SeedPhrase_Button() {
-		wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
+		//wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
 		seed_phrase_click.click();
 	}
 

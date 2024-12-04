@@ -47,9 +47,9 @@ public class TC_04_Create_NewKey extends BaseClass {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		status.SeedPhrase_Button();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		SeedPhrase();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 		Thread.sleep(2000);
@@ -57,9 +57,9 @@ public class TC_04_Create_NewKey extends BaseClass {
 		status.Confirm_Button();
 		Thread.sleep(20000);
 		status.View_Button();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		status.SeedPhrase_Button();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		SeedPhrase();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 	}
