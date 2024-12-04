@@ -88,7 +88,9 @@ public class Status_Check extends BaseClass {
 		//wait.until(ExpectedConditions.visibilityOf(seed_phrase_click));
 		Thread.sleep(5000);
 		Actions action = new Actions(driver);
-		action.moveToElement(seed_phrase_click).click(seed_phrase_click);
+		action.moveToElement(seed_phrase_click);
+		Thread.sleep(5000);
+		action.click(seed_phrase_click);
 	}
 
 	public void Create_Button() {

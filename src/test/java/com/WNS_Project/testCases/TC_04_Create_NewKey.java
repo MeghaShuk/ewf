@@ -47,7 +47,7 @@ public class TC_04_Create_NewKey extends BaseClass {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		status.SeedPhrase_Button();
 		Thread.sleep(5000);
 		SeedPhrase();
@@ -57,7 +57,7 @@ public class TC_04_Create_NewKey extends BaseClass {
 		status.Confirm_Button();
 		Thread.sleep(20000);
 		status.View_Button();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		status.SeedPhrase_Button();
 		Thread.sleep(5000);
 		SeedPhrase();
