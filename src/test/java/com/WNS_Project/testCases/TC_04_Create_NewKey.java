@@ -50,8 +50,12 @@ public class TC_04_Create_NewKey extends BaseClass {
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
 		Thread.sleep(30000);
+		WebDriverWait wait = new WebDriverWait(driver, 120);
 		WebElement viewseedbutton = driver
 				.findElement(By.xpath("//div[text()=\"Seed phrase\"]/../div[2]/div/following-sibling::*"));
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()=\\\"Seed phrase\\\"]/../div[2]/div/following-sibling::*")));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		System.out.println("Reached at seed phrase");
 		viewseedbutton.click();
 		Thread.sleep(5000);
 		SeedPhrase();
