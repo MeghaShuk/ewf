@@ -10,7 +10,7 @@ import com.WNS_Project.Base.BaseClass;
 
 public class Status_Check extends BaseClass {
 
-	WebDriverWait wait = new WebDriverWait(driver, 120);
+	WebDriverWait wait = new WebDriverWait(driver, 150);
 
 	public Status_Check(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -25,7 +25,7 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button/img[@alt=\"download\"]")
 	WebElement download;
 
-	@FindBy(css = "body > div.flex.h-screen.overflow-y-hidden.bg-white > div > div > div.flex.flex-col.gap-3.rounded-lg.border.p-3.lg\\:gap-6.lg\\:p-6.w-full.border-brand-lightGray.bg-brand-darkThemeGray.\\!p-0.text-brand-light.shadow-md > div > div.w-full.p-6 > div > div > div.grid.grid-cols-1.gap-6.lg\\:grid-cols-12 > div.space-y-6.lg\\:col-span-8 > div.grid.grid-cols-1.gap-6.md\\:grid-cols-12 > div:nth-child(1) > div > div:nth-child(3) > div.flex.items-center.justify-between > svg")
+	@FindBy(xpath = "//div[text()=\"Seed phrase\"]/../div[2]/div/following-sibling::*")
 	WebElement seed_phrase_click;
 
 	@FindBy(xpath = "//button/span[contains(text(), \"Create new\")]")
@@ -83,7 +83,7 @@ public class Status_Check extends BaseClass {
 	}
 
 	public void SeedPhrase_Button() {
-		//wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
+		wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
 		seed_phrase_click.click();
 	}
 

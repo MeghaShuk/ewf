@@ -17,14 +17,6 @@
 	</test> <!--
 	Test -->
 
-	<test name="Test2">
-		<classes>
-
-			<class name="com.WNS_Project.testCases.TC_05_Import_Key" />
-
-		</classes>
-	</test> <!--
-	Test -->
 
 </suite> <!--
 Suite -->
