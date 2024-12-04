@@ -27,9 +27,6 @@ public class Status_Check extends BaseClass {
 	@FindBy(xpath = "//button/img[@alt=\"download\"]")
 	WebElement download;
 
-	@FindBy(xpath = "//div[text()=\"Seed phrase\"]/../div[2]/div/following-sibling::*")
-	WebElement seed_phrase_click;
-
 	@FindBy(xpath = "//button/span[contains(text(), \"Create new\")]")
 	WebElement create_button;
 
@@ -82,13 +79,6 @@ public class Status_Check extends BaseClass {
 	public void Download_Button() {
 		wait.until(ExpectedConditions.elementToBeClickable(download));
 		download.click();
-	}
-
-	public void SeedPhrase_Button() throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
-		Thread.sleep(5000);
-		Actions action = new Actions(driver);
-		seed_phrase_click.click();
 	}
 
 	public void Create_Button() {

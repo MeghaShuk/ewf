@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import com.WNS_Project.Base.BaseClass;
@@ -48,7 +50,11 @@ public class TC_04_Create_NewKey extends BaseClass {
 		action.sendKeys(Keys.PAGE_DOWN).perform();
 		status.View_Button();
 		Thread.sleep(5000);
-		status.SeedPhrase_Button();
+		WebElement viewseedbutton = driver
+				.findElement(By.xpath("//div[text()=\"Seed phrase\"]/../div[2]/div/following-sibling::*"));
+		WebDriverWait wait = new WebDriverWait(driver, 120);
+		wait.until(ExpectedConditions.elementToBeClickable(viewseedbutton));
+		viewseedbutton.click();
 		Thread.sleep(5000);
 		SeedPhrase();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
@@ -58,7 +64,7 @@ public class TC_04_Create_NewKey extends BaseClass {
 		Thread.sleep(20000);
 		status.View_Button();
 		Thread.sleep(5000);
-		status.SeedPhrase_Button();
+		viewseedbutton.click();
 		Thread.sleep(5000);
 		SeedPhrase();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
