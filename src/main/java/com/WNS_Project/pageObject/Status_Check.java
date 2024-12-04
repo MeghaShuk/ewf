@@ -1,5 +1,6 @@
 package com.WNS_Project.pageObject;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,7 +84,8 @@ public class Status_Check extends BaseClass {
 	}
 
 	public void SeedPhrase_Button() {
-		//wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
+		wait.until(ExpectedConditions.visibilityOf(seed_phrase_click));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", seed_phrase_click);
 		seed_phrase_click.click();
 	}
 
