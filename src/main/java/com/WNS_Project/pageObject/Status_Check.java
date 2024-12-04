@@ -10,7 +10,7 @@ import com.WNS_Project.Base.BaseClass;
 
 public class Status_Check extends BaseClass {
 
-	WebDriverWait wait = new WebDriverWait(driver, 150);
+	WebDriverWait wait = new WebDriverWait(driver, 120);
 
 	public Status_Check(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -83,7 +83,7 @@ public class Status_Check extends BaseClass {
 	}
 
 	public void SeedPhrase_Button() {
-		wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
+		//wait.until(ExpectedConditions.elementToBeClickable(seed_phrase_click));
 		seed_phrase_click.click();
 	}
 
