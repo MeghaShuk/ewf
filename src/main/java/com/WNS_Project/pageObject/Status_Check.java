@@ -3,6 +3,7 @@ package com.WNS_Project.pageObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -85,9 +86,9 @@ public class Status_Check extends BaseClass {
 
 	public void SeedPhrase_Button() throws InterruptedException {
 		// wait.until(ExpectedConditions.visibilityOf(seed_phrase_click));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", seed_phrase_click);
 		Thread.sleep(5000);
-		seed_phrase_click.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(seed_phrase_click).clickAndHold().release().build().perform();
 	}
 
 	public void Create_Button() {
