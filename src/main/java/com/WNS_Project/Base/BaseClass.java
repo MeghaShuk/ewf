@@ -54,6 +54,7 @@ public class BaseClass {
 		WebDriverManager.chromedriver().setup();
 
 		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
 
 		// Create a map to store Chrome preferences
 		Map<String, Object> prefs = new HashMap<>();
