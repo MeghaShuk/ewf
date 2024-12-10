@@ -61,7 +61,7 @@ test:
     - mvn clean compile
     - ls target/classes
     - cat target/classes/config.properties
-    - mvn test -B
+    - mvn test 
   artifacts:
     paths:
     - target/surefire-reports/*.xml
