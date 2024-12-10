@@ -1,5 +1,6 @@
 image: maven:3.8.6-openjdk-11
 stages:
+  - dependency
   - clean_workspace
   - test
   - generate_report
@@ -36,6 +37,19 @@ before_script:
 #   - mv chromedriver /usr/local/bin/
 #   - chmod +x /usr/local/bin/chromedriver
  
+cache:
+  paths:
+    - .m2/repository/
+
+# Job to run dependency:tree
+dependency:
+  stage: dependency
+  script:
+    - git clone https://github.com/MeghaShuk/ewf.git
+    - mvn dependency:tree
+  tags:
+    - "Ewf Wns Automation"
+
 clean_workspace:
   stage: clean_workspace
   script:
@@ -54,15 +68,14 @@ clean_workspace:
 #   tags:
 #     - "Ewf Wns Automation"
  
-test:
+# Job to run tests
+run_tests:
   stage: test
   script:
     - echo "Running tests..."
-    - mvn dependency:tree
     - mvn clean compile
-    - ls target/classes
-    - cat target/classes/config.properties
-    - mvn test
+    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+
   artifacts:
     paths:
     - target/surefire-reports/*.xml
