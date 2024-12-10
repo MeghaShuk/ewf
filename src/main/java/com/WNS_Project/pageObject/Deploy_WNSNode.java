@@ -32,7 +32,7 @@ public class Deploy_WNSNode extends BaseClass {
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")
 	WebElement aws_region;
 
-	@FindBy(xpath = "//div/input[@id=\"react-select-:rj:-input\"]")
+	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")
 	WebElement managed_region;
 
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rj:-input\"]")

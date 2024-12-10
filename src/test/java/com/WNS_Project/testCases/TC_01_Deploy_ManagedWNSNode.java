@@ -3,6 +3,7 @@ package com.WNS_Project.testCases;
 import java.time.ZoneId;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,8 +21,6 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.model.Label;
 
 public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
-
-	WebElement status;
 
 	@Description("Deploying a worker node involves a series of steps to ensure proper setup, secure connectivity, and efficient integration into the network. After the node is deployed, it will retrieve a Node-RED flow from IPFS (SmartFlow Storage). This TestCase will validate the deployment process, including the 9-minute wait time required for the worker node to reach a ready state, ensuring it is fully operational and ready to contribute to the network.After a successful deployment, the node should appear in the Node List on the Manage Screen. If it does not, an alert will be triggered to notify the team for further investigation and resolution.")
 	@Severity(SeverityLevel.CRITICAL)
@@ -67,27 +66,23 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 		deploy.Continue_button();
 		deploy.Popup_Continue();
 		Thread.sleep(20000);
-		driver.navigate().to(workermanage);
-		Thread.sleep(6000);
+		WebElement status = driver.findElement(By.xpath("//tr/td[2]/div"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", status);
+		Thread.sleep(5000);
 		waitForNodeToBe();
+		Thread.sleep(240000);
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 	}
 
 	@AfterClass
 	public void delayAfterTests() throws Exception {
 
-		System.out.println("Adding a 19-minutes delay before running the next test class...");
+		System.out.println("Adding a 6-minutes delay before running the next test class...");
 
-		Thread.sleep(1140000);
+		Thread.sleep(360000);
 
 		waitForNodeStatusToBe();
-
-		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
-
-		Status_Check status = new Status_Check(driver);
-
-		status.View_Button();
-		Thread.sleep(2000);
 
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 
