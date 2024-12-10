@@ -58,10 +58,11 @@ test:
   stage: test
   script:
     - echo "Running tests..."
+    - mvn dependency:tree
     - mvn clean compile
     - ls target/classes
     - cat target/classes/config.properties
-    - mvn clean install
+    - mvn test
   artifacts:
     paths:
     - target/surefire-reports/*.xml
