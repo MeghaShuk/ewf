@@ -1,4 +1,4 @@
-image: maven:3.8.5-openjdk-17
+image: maven:3.8.4-openjdk-17
 stages:
   - dependency
   - cache
@@ -74,7 +74,7 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
-    - mvn test -DconfigFile=src/main/resources/config.properties
+    - mvn clean test -Dsurefire.suiteXmlFiles=testng.xml
 
   artifacts:
     paths:
