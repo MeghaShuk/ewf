@@ -1,6 +1,7 @@
 image: maven:3.8.6-openjdk-11
 stages:
   - dependency
+  cache
   - clean_workspace
   - test
   - generate_report
@@ -45,7 +46,6 @@ cache:
 dependency:
   stage: dependency
   script:
-    - git clone https://github.com/MeghaShuk/ewf.git
     - mvn dependency:tree
   tags:
     - "Ewf Wns Automation"
@@ -74,7 +74,7 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
-    - mvn test -DconfigFile=src/main/resources/Configuration/config.properties
+    - mvn test -DconfigFile=src/main/resources/config.properties
 
   artifacts:
     paths:
