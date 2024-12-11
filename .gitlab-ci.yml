@@ -41,8 +41,6 @@ before_script:
 cache:
   paths:
     - .m2/repository/
-  tags:
-    - "Ewf Wns Automation"
 
 # Job to run dependency:tree
 dependency:
