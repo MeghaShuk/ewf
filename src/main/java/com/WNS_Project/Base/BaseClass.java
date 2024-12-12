@@ -66,11 +66,11 @@ public class BaseClass {
 
 		// Apply preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs);
+
 		options.addArguments("--headless"); // Run in headless mode
 		options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
 		options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared memory
-		options.addArguments("--remote-debugging-port=9222"); // Enable remote
-		// debugging
+		options.addArguments("--remote-debugging-port=9222"); // Enable remote debuggging
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
@@ -93,6 +93,7 @@ public class BaseClass {
 			if (!handle.equals(mainWindow)) {
 				driver.switchTo().window(handle);
 				driver.get(baseurl);
+				System.out.println("BaseURL entered...");
 				driver.manage().window().maximize();
 
 				break;
