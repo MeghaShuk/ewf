@@ -209,6 +209,11 @@
 					<configuration>
 						<source>1.7</source>
 						<target>1.7</target>
+						<fork>true</fork>
+						<compilerArgs>
+							<arg>
+								--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+						</compilerArgs>
 					</configuration>
 				</plugin>
 				<plugin>
