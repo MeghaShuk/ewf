@@ -76,7 +76,7 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
-    - mvn clean test -B
+    - mvn test -DconfigFile=src/main/resources/config.properties
   artifacts:
     paths:
     - target/surefire-reports/*.xml

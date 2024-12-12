@@ -220,7 +220,7 @@
 						<forkCount>0</forkCount>
 						<systemPropertyVariables>
 							<configFile>
-								src/main/resources/Configuration/config.properties</configFile>
+								src/main/resources/config.properties</configFile>
 						</systemPropertyVariables>
 						<argLine>-Xmx1024m</argLine>
 						<suiteXmlFiles>
