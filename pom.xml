@@ -196,9 +196,15 @@
 					<version>1.0.0</version>
 					<executions>
 						<execution>
+							<phase>validate</phase>
 							<goals>
-								<goal>load</goal>
+								<goal>read-project-properties</goal>
 							</goals>
+							<configuration>
+								<files>
+									<file>src/main/resources/config.properties</file>
+								</files>
+							</configuration>
 						</execution>
 					</executions>
 				</plugin>

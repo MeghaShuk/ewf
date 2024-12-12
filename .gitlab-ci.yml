@@ -76,6 +76,7 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
+    - cat src/main/resources/config.properties
     - mvn test -DconfigFile=src/main/resources/config.properties
   artifacts:
     paths:
