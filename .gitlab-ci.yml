@@ -12,6 +12,7 @@ variables:
   MAVEN_OPTS: "-Xmx2048m"
  
 before_script:
+
   - export DISPLAY=:0.0
   # Install Allure command-line tool
   - apt-get update && apt-get install -y wget unzip
