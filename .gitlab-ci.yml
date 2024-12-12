@@ -76,7 +76,6 @@ run_tests:
   script:
     - echo "Running tests..."
     - mvn clean compile
-    - sleep 360000
     - mvn clean test -B
   artifacts:
     paths:
