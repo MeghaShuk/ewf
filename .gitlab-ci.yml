@@ -1,4 +1,5 @@
-image: megha1305/java-1.8-maven-chromium:latest
+image: megha1305/java-8-maven-chromium:latest
+
 stages:
   - dependency
   - cache
