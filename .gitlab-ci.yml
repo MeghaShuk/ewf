@@ -1,4 +1,4 @@
-image: megha1305/java-maven-selenium:latest
+image: megha1305/java-1.8-maven-selenium:latest
 stages:
   - dependency
   - cache
