@@ -1,4 +1,4 @@
-image: megha1305/java-1.8-maven-selenium:latest
+image: megha1305/java-1.8-maven-chromium:latest
 stages:
   - dependency
   - cache
@@ -32,7 +32,7 @@ before_script:
   - apt-get install -y google-chrome-stable
  
     # Install dependencies for ChromeDriver and unzip
-  - apt-get install -y chromium
+  # - apt-get install -y chromium
  
     # Download and install ChromeDriver (latest version for Chrome 114 in this case)
 #   - wget https://chromedriver.storage.googleapis.com/112.0.5615.49/chromedriver_linux64.zip
