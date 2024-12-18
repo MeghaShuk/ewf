@@ -1,4 +1,4 @@
-image: maven:3.8.6-jdk-8
+image: megha1305/java-maven-selenium:latest
 stages:
   - dependency
   - cache
