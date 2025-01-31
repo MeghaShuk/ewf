@@ -56,9 +56,6 @@ public class TC_08_DeleteWNS extends BaseClass {
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 		Thread.sleep(160000);
 		driver.navigate().refresh();
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", status);
 		waitForNodeToBe();
 		Allure.addAttachment("Screenshot", getScreenshotAsFileInputStream());
 
