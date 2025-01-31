@@ -71,7 +71,6 @@ public class BaseClass {
 		options.addArguments("--no-sandbox");
 		//options.addArguments("--disable-dev-shm-usage"); 
 		//options.addArguments("--remote-debugging-port=9222");
-		options.setCapability("goog:loggingPrefs", Map.of("browser", "ALL"));
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
