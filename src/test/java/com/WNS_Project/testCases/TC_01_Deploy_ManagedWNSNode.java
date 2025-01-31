@@ -64,6 +64,7 @@ public class TC_01_Deploy_ManagedWNSNode extends BaseClass {
 		deploy.Continue_button();
 		deploy.Generate_Key();
 		deploy.Continue_button();
+		Thread.sleep(2000);
 		deploy.Popup_Continue();
 		Thread.sleep(20000);
 		WebElement status = driver.findElement(By.xpath("//tr/td[2]/div"));

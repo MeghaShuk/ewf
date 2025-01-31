@@ -32,7 +32,7 @@ public class Deploy_WNSNode extends BaseClass {
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")
 	WebElement aws_region;
 
-	@FindBy(xpath = "//div/input[@id=\"react-select-:rl:-input\"]")
+	@FindBy(xpath = "//div/input[@id=\"react-select-:ro:-input\"]")
 	WebElement managed_region;
 
 	@FindBy(xpath = "//div/input[@id=\"react-select-:rj:-input\"]")
@@ -50,7 +50,7 @@ public class Deploy_WNSNode extends BaseClass {
 	@FindBy(xpath = "//div[@class=\"flex flex-row gap-2 lg:gap-4\"]/label[1]/div[1]")
 	WebElement generate_key;
 
-	@FindBy(xpath = "//div[@id=\"modal-:r8:\"]/div[2]/button[contains(text(),\"Continue\")]")
+	@FindBy(xpath = "//div[@id=\"modal-:rb:\"]/div[2]/button[contains(text(),\"Continue\")]")
 	WebElement popup_continue;
 
 	@FindBy(xpath = "//div[@id=\"modal-:r8:\"]/div[2]/button[contains(text(),\"Cancel\")]")
