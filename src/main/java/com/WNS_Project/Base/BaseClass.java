@@ -54,6 +54,7 @@ public class BaseClass {
 		WebDriverManager.chromedriver().setup();
 
 		ChromeOptions options = new ChromeOptions();
+		// options.addArguments("--headless");
 
 		// Create a map to store Chrome preferences
 		Map<String, Object> prefs = new HashMap<>();
@@ -66,14 +67,15 @@ public class BaseClass {
 
 		// Apply preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs);
-
-		options.addArguments("--headless"); // Run in headless mode
-		options.addArguments("--no-sandbox"); // Disable sandbox for CI environments
-		options.addArguments("--disable-dev-shm-usage"); // Avoid issues with shared memory
-		options.addArguments("--remote-debugging-port=9222"); // Enable remote debuggging
+		options.addArguments("--headless"); 
+		options.addArguments("--no-sandbox");
+		//options.addArguments("--disable-dev-shm-usage"); 
+		//options.addArguments("--remote-debugging-port=9222");
+		options.setCapability("goog:loggingPrefs", Map.of("browser", "ALL"));
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
 		driver.manage().window().maximize();
@@ -93,7 +95,6 @@ public class BaseClass {
 			if (!handle.equals(mainWindow)) {
 				driver.switchTo().window(handle);
 				driver.get(baseurl);
-				System.out.println("BaseURL entered...");
 				driver.manage().window().maximize();
 
 				break;
