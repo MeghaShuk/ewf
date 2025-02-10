@@ -19,7 +19,7 @@ before_script:
   - apt-get install -y pciutils
   - apt-get install -y software-properties-common
   - add-apt-repository -y ppa:graphics-drivers/ppa
-  - apt-get install xvfb
+  - apt-get install -y xvfb
   - apt-get update && apt-get install -y wget unzip
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
