@@ -21,7 +21,7 @@ before_script:
   - add-apt-repository --remove ppa:graphics-drivers/ppa
   - add-apt-repository ppa:graphics-drivers/ppa
   - apt-get update
-  - apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FCAE110B1118213C
+  - gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/foo.gpg --recv-keys 9658E8044A3AA3D6
   - apt search nvidia-driver
   - apt-get install nvidia-driver-460
   - apt-get install -y xvfb
