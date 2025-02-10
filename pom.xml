@@ -218,7 +218,7 @@
 						<target>1.8</target>  <!-- Java version for compiled
 						bytecode -->
 						<compilerArgs>
-                    <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                    
                 </compilerArgs>
 					</configuration>
 				</plugin>
