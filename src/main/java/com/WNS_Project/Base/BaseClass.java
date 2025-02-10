@@ -74,7 +74,7 @@ public class BaseClass {
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 100);
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
 		driver.manage().window().maximize();
