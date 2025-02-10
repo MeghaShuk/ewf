@@ -16,7 +16,7 @@ before_script:
   - export DISPLAY=:0.0
   # Install Allure command-line tool
   - apt-get update
-  - apt-get install pciutils
+  - apt-get install -y pciutils
   - apt-get install nvidia-driver
   - apt-get install xvfb
   - apt-get update && apt-get install -y wget unzip
