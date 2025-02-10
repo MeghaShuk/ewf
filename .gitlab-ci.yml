@@ -64,7 +64,9 @@ run_tests:
     - echo "Running tests with Firefox..."
     - mvn clean compile
     - cat src/main/resources/config.properties
-    - mvn test -DconfigFile=src/main/resources/config.properties
+    - sleep 36000
+    -  mvn test -DconfigFile=src/main/resources/config.properties -X -Dtest=com.WNS_Project.testCases.TC_01_Deploy_ManagedWNSNode
+    - mvn test -DconfigFile=src/main/resources/config.properties -X
   artifacts:
     paths:
       - target/surefire-reports/*.xml
