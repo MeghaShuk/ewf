@@ -16,16 +16,6 @@ before_script:
   - export DISPLAY=:0.0
   # Install Allure command-line tool
   - apt-get update
-  - apt-get install -y pciutils
-  - apt-get install -y software-properties-common
-  - add-apt-repository --remove ppa:graphics-drivers/ppa
-  - apt-get install nano
-  - nano /etc/apt/sources.list
-  - deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu focal main
-  - apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FCAE110B1118213C
-  - apt-get update
-  - apt search nvidia-driver
-  - apt-get install nvidia-driver-460
   - apt-get install -y xvfb
   - apt-get update && apt-get install -y wget unzip
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
