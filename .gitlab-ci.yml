@@ -27,7 +27,11 @@ before_script:
 
   # Install Firefox and GeckoDriver
   # Install Firefox (latest stable version)
-  - apt-get install firefox
+  - apt-get update
+  - apt-cache search firefox
+  - snap install firefox
+  - apt install flatpak
+  - flatpak install flathub org.mozilla.firefox
   - apt-get install firefox-geckodriver
   # Install dependencies for GeckoDriver and unzip
   - apt-get install -y wget unzip
