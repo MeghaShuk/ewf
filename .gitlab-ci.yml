@@ -24,7 +24,7 @@ before_script:
 
   # Install Firefox and GeckoDriver
   # Install Firefox (latest stable version)
-  - apt-get install -y firefox-esr
+  - apt-get install -y firefox
 
   # Install dependencies for GeckoDriver and unzip
   - apt-get install -y wget unzip
