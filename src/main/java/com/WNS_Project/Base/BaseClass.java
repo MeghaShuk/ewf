@@ -69,8 +69,8 @@ public class BaseClass {
 		options.setExperimentalOption("prefs", prefs);
 		options.addArguments("--headless"); 
 		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage"); 
-		options.addArguments("--remote-debugging-port=9222");
+		//options.addArguments("--disable-dev-shm-usage"); 
+		//options.addArguments("--remote-debugging-port=9222");
 
 		// Initialize WebDriver with the configured ChromeOptions
 		driver = new ChromeDriver(options);
