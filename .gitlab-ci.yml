@@ -1,4 +1,4 @@
-image: megha1305/java-8-maven-chromium:latest
+image: maven:3.8.6-openjdk-17-slim
 
 stages:
   - dependency
