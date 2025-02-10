@@ -25,6 +25,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.WNS_Project.Utilities.ReadConfig;
@@ -51,9 +53,9 @@ public class BaseClass {
 	@BeforeClass
 	public void setup() throws InterruptedException {
 
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
 
-		ChromeOptions options = new ChromeOptions();
+		FirefoxOptions options = new FirefoxOptions();
 		// options.addArguments("--headless");
 
 		// Create a map to store Chrome preferences
@@ -66,14 +68,14 @@ public class BaseClass {
 		prefs.put("download.prompt_for_download", false);
 
 		// Apply preferences to ChromeOptions
-		options.setExperimentalOption("prefs", prefs);
-		options.addArguments("--headless"); 
+		//options.setExperimentalOption("prefs", prefs);
+		//options.addArguments("--headless"); 
 		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage"); 
-		options.addArguments("--remote-debugging-port=9222");
+		//options.addArguments("--disable-dev-shm-usage"); 
+		//options.addArguments("--remote-debugging-port=9222");
 
 		// Initialize WebDriver with the configured ChromeOptions
-		driver = new ChromeDriver(options);
+		driver = new FirefoxDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
@@ -140,6 +142,7 @@ public class BaseClass {
 		Thread.sleep(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("location.reload(true);");
+		driver.navigate().refresh();
 		Username(email);
 		Password(password);
 		Thread.sleep(2000);
