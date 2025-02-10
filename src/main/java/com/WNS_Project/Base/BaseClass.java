@@ -152,7 +152,7 @@ public class BaseClass {
 		Submit();
 		System.out.println("Login Completed");
 		Thread.sleep(5000);
-		Toggle();
+		driver.navigate().to("https://launchpad.energyweb.org/vaas/dashboard");
 		Thread.sleep(2000);
 		System.out.println("Welcome to VaaS Platform");
 		Thread.sleep(5000);
