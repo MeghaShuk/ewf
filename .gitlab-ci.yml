@@ -1,4 +1,4 @@
-image: maven:3.8.5-openjdk-17
+image: maven:3.8.4-openjdk-17-slim
 
 stages:
   - dependency
@@ -16,7 +16,6 @@ before_script:
   - export DISPLAY=:0.0
   # Install Allure command-line tool
   - apt-get update && apt-get install -y wget unzip
-  - apt install gnupg -y
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
   - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
