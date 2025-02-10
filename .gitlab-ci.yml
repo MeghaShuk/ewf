@@ -14,6 +14,8 @@ variables:
 
 before_script:
   - export DISPLAY=:0.0
+  - export MOZ_REMOTE_SETTINGS_DEVTOOLS=1
+
   # Install Allure command-line tool
   - apt-get update
   - apt-get install -y xvfb
@@ -25,8 +27,8 @@ before_script:
 
   # Install Firefox and GeckoDriver
   # Install Firefox (latest stable version)
-  - apt-get install -y firefox-esr
-
+  - apt-get install firefox
+  - apt-get install firefox-geckodriver
   # Install dependencies for GeckoDriver and unzip
   - apt-get install -y wget unzip
 
