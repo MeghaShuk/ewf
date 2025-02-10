@@ -8,12 +8,11 @@ stages:
   - generate_report
   - publish_report
   - publish_extent_report
- 
+
 variables:
   MAVEN_OPTS: "-Xmx2048m"
- 
-before_script:
 
+before_script:
   - export DISPLAY=:0.0
   # Install Allure command-line tool
   - apt-get update && apt-get install -y wget unzip
@@ -22,26 +21,22 @@ before_script:
   - unzip allure.zip -d /opt/
   - export PATH=$PATH:/opt/allure-2.17.2/bin  # Add Allure to PATH  
   - echo "Updating and installing necessary packages..."
-  - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
- 
-    # Add Google Chrome's repository
-  - sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
- 
-    # Update apt repositories
-  - apt-get update -y
- 
-    # Install Google Chrome (stable version)
-  - apt-get install -y google-chrome-stable
- 
-    # Install dependencies for ChromeDriver and unzip
-  # - apt-get install -y chromium
- 
-    # Download and install ChromeDriver (latest version for Chrome 114 in this case)
-#   - wget https://chromedriver.storage.googleapis.com/112.0.5615.49/chromedriver_linux64.zip
-#   - unzip chromedriver_linux64.zip
-#   - mv chromedriver /usr/local/bin/
-#   - chmod +x /usr/local/bin/chromedriver
- 
+
+  # Install Firefox and GeckoDriver
+  # Install Firefox (latest stable version)
+  - apt-get install -y firefox-esr
+
+  # Install dependencies for GeckoDriver and unzip
+  - apt-get install -y wget unzip
+
+  # Download and install GeckoDriver (latest version)
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
+  - tar -xvzf geckodriver-v0.32.0-linux64.tar.gz
+  - mv geckodriver /usr/local/bin/
+  - chmod +x /usr/local/bin/geckodriver
+
+  # You can specify additional dependencies or updates here if necessary.
+
 cache:
   paths:
     - .m2/repository/
@@ -61,31 +56,21 @@ clean_workspace:
     # - rm -rf *
   tags:
     - "Ewf Wns Automation"
- 
- 
-# git:
-#   stage: git
-#   script:
-#     - echo "Cloning repository and getting dependencies..."
-#     # - git clone https://github.com/MeghaShuk/ewf.git
-#     - mvn dependency:tree
-#   tags:
-#     - "Ewf Wns Automation"
- 
+
 # Job to run tests
 run_tests:
   stage: test
   script:
-    - echo "Running tests..."
+    - echo "Running tests with Firefox..."
     - mvn clean compile
     - cat src/main/resources/config.properties
     - mvn test -DconfigFile=src/main/resources/config.properties
   artifacts:
     paths:
-    - target/surefire-reports/*.xml
+      - target/surefire-reports/*.xml
   tags:
     - "Ewf Wns Automation"
- 
+
 generate_report:
   stage: generate_report
   script:
@@ -93,7 +78,7 @@ generate_report:
     - mvn allure:serve
   tags:
     - "Ewf Wns Automation"
- 
+
 publish_report:
   stage: publish_report
   script:
@@ -104,7 +89,7 @@ publish_report:
       - target/allure-report
   tags:
     - "Ewf Wns Automation"
- 
+
 publish_extent_report:
   stage: publish_extent_report
   script:
@@ -114,6 +99,6 @@ publish_extent_report:
       - report-output/extentreport.html
   tags:
     - ""
- 
+
 after_script:
   - echo "Cleaning up..."
