@@ -15,6 +15,9 @@ variables:
 before_script:
   - export DISPLAY=:0.0
   # Install Allure command-line tool
+  - sudo apt-get install libpci-dev
+  - sudo apt-get install nvidia-driver
+  - sudo apt-get install xvfb
   - apt-get update && apt-get install -y wget unzip
   - wget https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.zip -O allure.zip
   - unzip allure.zip -d /opt/
