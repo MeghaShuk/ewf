@@ -53,9 +53,9 @@ public class BaseClass {
 	@BeforeClass
 	public void setup() throws InterruptedException {
 
-		WebDriverManager.firefoxdriver().setup();
+		WebDriverManager.chromedriver().setup();
 
-		FirefoxOptions options = new FirefoxOptions();
+		ChromeOptions options = new ChromeOptions();
 		// options.addArguments("--headless");
 
 		// Create a map to store Chrome preferences
@@ -70,12 +70,13 @@ public class BaseClass {
 		// Apply preferences to ChromeOptions
 		//options.setExperimentalOption("prefs", prefs);
 		options.addArguments("--headless"); 
+		options.addArguments("disable-gpu");
 		//options.addArguments("--no-sandbox");
 		//options.addArguments("--disable-dev-shm-usage"); 
 		//options.addArguments("--remote-debugging-port=9222");
 
 		// Initialize WebDriver with the configured ChromeOptions
-		driver = new FirefoxDriver(options);
+		driver = new ChromeDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		baseurl = readconfig.getApplicationURL();
 		driver.get(baseurl);
