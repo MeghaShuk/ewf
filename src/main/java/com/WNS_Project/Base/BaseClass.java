@@ -70,7 +70,7 @@ public class BaseClass {
 		// Apply preferences to ChromeOptions
 		//options.setExperimentalOption("prefs", prefs);
 		options.addArguments("--headless"); 
-		options.addArguments("--no-sandbox");
+		//options.addArguments("--no-sandbox");
 		//options.addArguments("--disable-dev-shm-usage"); 
 		//options.addArguments("--remote-debugging-port=9222");
 
